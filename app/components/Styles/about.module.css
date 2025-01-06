@@ -1,76 +1,66 @@
 /* General styling for the About section */
 .section {
     text-align: center;
-  background-color: #0000002f;
-    /* Full width of the viewport */
-    max-width: 1000%; /* Ensure it doesn’t exceed screen width */
-     /* Optional: add padding to ensure content doesn’t touch the edges */
-    margin-left: -1rem;
-   
+    background-color: #0000002f;
+    max-width: 100%; /* Ensure it fits within the screen */
+    margin: 0 auto;
+    padding: 1rem; /* Add padding for mobile-friendly spacing */
 }
 
 .about {
-    max-width: 100%; /* Ensure the about section doesn’t exceed the screen width */
+    max-width: 100%; 
     margin: 0 auto;
-    
+    padding: 1rem; 
 }
 
 .contentContainer {
-    max-width: 50%; /* Adjust content container to fit full screen */
-    margin-bottom: 30px;
-    margin-top: -100px;
-    margin-left: 20rem;
-    
-
-
-
-
+    max-width: 90%; /* Fit within mobile screens */
+    margin: 1rem auto;
+    text-align: center; /* Center-align content for better readability */
+    padding: 1rem;
 }
 
-
 .aboutText p {
-    font-size: 1.3rem;
-    line-height: 1.7;
+    font-size: 1rem;
+    line-height: 1.5;
     color: #ffffff;
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
 }
 
 .howdy {
-    font-size: 150px;
+    font-size: 3rem; /* Reduced size for mobile */
     font-family: cursive;
     background: linear-gradient(90deg, #ff6ec7, #6eafff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: 2px;
+    margin: 0.5rem auto;
 }
 
 .howdyText {
-    font-size: 80px;
+    font-size: 2rem; /* Adjusted for mobile */
     color: #ffffff;
     font-family: cursive;
+    margin-bottom: 1rem;
 }
 
 .tabs {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
-    gap: 80px; /* Smaller gap for better responsiveness */
+    margin-top: 1rem;
+    gap: 1rem;
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    font-weight: bolder;
+    font-weight: bold;
 }
 
 .tabButton {
-    font-size: 50rem;
+    font-size: 1rem;
     display: inline-block;
     cursor: pointer;
     text-decoration: none;
-    margin: 2rem;
-    border-radius: 2em;
-    position: relative;
-    color: #ff00ff;
-    padding: 2px 40px;
-    padding-top: 15px;
-    text-align: center;
+    margin: 0.5rem;
+    border-radius: 1em;
+    padding: 0.5rem 1rem;
     background-color: transparent;
     box-shadow: 0 0 5px #fff, 0 0 10px #ff00ff, 0 0 15px #ff00ff;
     transition: all 0.3s ease-in-out;
@@ -86,163 +76,123 @@
 /* Container for Image and Content */
 .imageContainer {
     display: flex;
+    flex-direction: column; /* Stack content vertically for smaller screens */
     align-items: center;
-    gap: 20px;
-    margin-top: 15px;
-    padding: 15px 30px;
+    gap: 1rem;
+    margin: 1rem auto;
+    padding: 1rem;
     background-color: #1e1e1e;
     border-radius: 12px;
-    flex-direction: column; /* Stack content vertically for smaller screens */
+    text-align: center;
 }
 
 /* Image Styling */
 .heroImage {
     border: 1px solid #000000;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    background-color: #ffffff;
-    max-width: 100%;
+    max-width: 90%;
     height: auto; /* Maintain aspect ratio */
+    background-color: #ffffff;
+    padding: 10px;
 }
 
 /* Content Styling */
-.contentContainer ul {
-    list-style-type: none;
-    padding: 0;
-}
-
 .certItem {
-    color: rgb(252, 131, 212); /* Change the color to pink */
-    text-align: left;
+    color: rgb(252, 131, 212); 
+    text-align: center; /* Center text for mobile */
 }
 
 .cerfy {
-    margin-top: 10px;
-    padding: 40px;
+    margin-top: 1rem;
+    padding: 1rem;
     background: #1e1e1e;
     border-radius: 12px;
     color: #ffffff;
-    font-size: 1rem;
-    line-height: 1.8;
-}
-
-.certItem p {
-    font-size: 1rem;
-}
-
-.certImageWrapper {
-    margin-right: 15px; /* Space between the image and text */
-}
-
-.certContent {
-    display: flex;
-    align-items: center;
-}
-
-.certImage {
-    padding-bottom: 20px;
-    max-width: 100%;
-    height: auto;
-    width: 100px; /* Adjust as needed */
+    font-size: 0.9rem;
+    line-height: 1.5;
 }
 
 /* Responsive Media Queries */
 
-/* For tablets and smaller desktops */
+/* Tablets and smaller desktops */
 @media (max-width: 1024px) {
     .aboutText p {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .howdy {
-        font-size: 120px;
+        font-size: 2.5rem;
     }
 
     .howdyText {
-        font-size: 60px;
+        font-size: 1.5rem;
     }
 
     .tabs {
-        gap: 15px;
+        gap: 0.5rem;
     }
 }
 
-/* For mobile screens */
+/* Mobile screens */
 @media (max-width: 768px) {
+    .contentContainer {
+        max-width: 100%;
+        padding: 1rem;
+    }
+
     .aboutText p {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .howdy {
-        font-size: 90px;
+        font-size: 2rem;
     }
 
     .howdyText {
-        font-size: 40px;
+        font-size: 1.2rem;
     }
 
     .tabButton {
         font-size: 0.9rem;
-        padding: 8px 20px;
+        padding: 0.5rem;
     }
 
     .imageContainer {
-        gap: 10px;
-        padding: 10px 20px;
+        gap: 0.5rem;
+        padding: 0.5rem;
     }
 
     .heroImage {
-        max-width: 80%;
+        max-width: 100%;
     }
 
     .cerfy {
-        font-size: 1rem;
-        padding: 20px;
+        font-size: 0.8rem;
+        padding: 1rem;
     }
 }
 
-/* For very small screens (e.g., old phones) */
+/* Very small screens (e.g., old phones) */
 @media (max-width: 480px) {
     .howdy {
-        font-size: 60px;
+        font-size: 1.5rem;
     }
 
     .howdyText {
-        font-size: 30px;
+        font-size: 1rem;
     }
 
     .tabButton {
         font-size: 0.8rem;
-        padding: 5px 15px;
-    }
-
-    .heroImage {
-        max-width: 70%;
-    }
-
-    .cerfy {
-        font-size: 0.9rem;
-        padding: 15px;
-    }
-}
-
-/* For large screens (e.g., ultra-wide monitors) */
-@media (min-width: 1200px) {
-    .aboutSection {
-        width: 50rem;
-        margin-left: 15%;
-        padding: 20px 40px;
-    }
-}
-
-/* For landscape orientation */
-@media (max-width: 768px) and (orientation: landscape) {
-    .aboutSection {
-        padding: 5px;
-        font-size: 0.8rem;
+        padding: 0.3rem;
     }
 
     .heroImage {
         max-width: 90%;
+    }
+
+    .cerfy {
+        font-size: 0.7rem;
+        padding: 0.5rem;
     }
 }
