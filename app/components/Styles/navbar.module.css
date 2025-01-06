@@ -3,17 +3,17 @@
   position: sticky;
   top: 0;
   width: 100%;
-  padding: 10px 80px;
+  padding: 10px 20px; /* Adjust padding for smaller screens */
   background-color: rgb(44, 46, 46);
   z-index: 1000;
   box-shadow: 0 0 10px #ff00ff;
   display: flex;
-  justify-content: flex-end; /* Align the menu to the right */
+  justify-content: space-between; /* Space between logo and menu */
   align-items: center;
-  transition: transform 0.3s ease; /* Smooth hide/show transition */
+  transition: transform 0.3s ease;
 }
 
-/* When navbar is hidden, move it off the screen */
+/* Navbar when hidden */
 .hideNavbar {
   transform: translateY(-100%);
 }
@@ -21,83 +21,108 @@
 /* Navbar inner container */
 .navbarContainer {
   display: flex;
-  justify-content: flex-end; /* Align items to the right */
+  justify-content: flex-end;
   align-items: center;
-  width: 100%; /* Make sure it spans the full width */
+  width: 100%;
   font-size: 1.2rem;
 }
 
-/* Menu list for desktop */
+/* Desktop menu */
 .menu {
   display: flex;
   align-items: center;
 }
 
-/* Menu items container */
+/* Menu list */
 .menuList {
   display: flex;
   list-style-type: none;
   margin: 0;
   padding: 0;
-  gap: 30px; /* Space between menu items */
-} 
+  gap: 20px; /* Space between items */
+}
 
-/* Individual menu items */
+/* Menu items */
 .menuItem {
   position: relative;
   color: #ffffff;
 }
 
 .menuItem:hover {
-  color: #d006a8 !important; /* Set hover color to pink and force it with !important */
-  transform: scale(1.1); /* Zoom effect on hover */
+  color: #d006a8;
+  transform: scale(1.1);
 }
 
-
-/* Menu link styling */
+/* Menu links */
 .menuLink {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 500;
   text-decoration: none;
-  padding: 5px 20px;
-  color: rgb(81, 26, 26); /* Ensure the default link color is white */
+  color: #ffffff;
+  padding: 5px 10px;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-/* Hover effect for the menu links */
 .menuLink:hover {
-  color: #d006a8 !important; /* Set hover color to pink and force it with !important */
-  transform: scale(1.1); /* Zoom effect on hover */
+  color: #d006a8;
+  transform: scale(1.1);
 }
 
-/* Active link styling */
 .menuLink.active {
   color: #fbbf24;
-  border-bottom: 2px solid #fbbf24; /* Add border at the bottom of the active link */
+  border-bottom: 2px solid #fbbf24;
 }
 
 /* Mobile menu styles */
 .mobileMenu {
-  display: none; /* Hide on desktop, show with media query */
+  display: none; /* Hidden on desktop */
+  font-size: 2rem;
+  color: #ffffff;
+  cursor: pointer;
 }
 
-/* Small screens (Mobile) */
+/* Menu overlay for mobile */
+.menuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.menuOverlay.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.menuOverlay .menuList {
+  flex-direction: column;
+  gap: 20px; /* Space between items */
+  text-align: center;
+}
+
+/* Media query for smartphones */
 @media screen and (max-width: 768px) {
   .menu {
-    display: none; /* Hide menu by default */
+    display: none; /* Hide menu on small screens */
   }
 
   .mobileMenu {
-    display: block; /* Show mobile menu toggle button */
+    display: block; /* Show hamburger icon */
   }
 
-  .menuOverlay {
-    opacity: 1;
-    visibility: visible; /* Show the overlay menu when toggled */
-  }
-
-  .menuOverlay.open {
-    opacity: 1;
-    visibility: visible;
+  .menuOverlay.open .menuList {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
   }
 }
