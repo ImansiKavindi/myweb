@@ -1,3 +1,4 @@
+/* globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,17 +6,38 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary-500: #ff08e2; /* Custom primary color */
+  --secondary-500: #48119a; /* Custom secondary color */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --primary-500: #ff08e2; /* Light Green */
+    --secondary-500: #48119a; /* Amber */
   }
 }
 
 body {
-  color: var(--foreground);
   background: var(--background);
+  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* globals.css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  max-width: 10000px;
+}
+
+section {
+  margin: 20px 0;
+  margin-left: 80px;
+  margin-top: 270px;
 }

@@ -1,0 +1,359 @@
+
+
+/* Hero Section */
+.heroSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  padding: 0px;
+  height: 100vh;
+  color: #fff;
+  margin-top: -70px; /* Moves the section 20px closer to the top of the page */
+  position:absolute;
+ 
+  
+ 
+}
+
+/* Content Container */
+.contentContainer {
+  flex: 1;
+  margin-left: 100px;
+  margin-top: 0px;
+  align-items: center;
+
+}
+
+/* Style for "Howdy" */
+.howdyText {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+ margin-top: -10px;
+  font-family:cursive;
+}
+
+
+.howdy {
+  font-size: 150px;
+  text-align: center;
+  margin-top: -50px;
+  font-family: cursive;
+
+  /* Gradient Background */
+  background: linear-gradient(90deg, #ff6ec7, #6eafff);
+  
+  /* Apply gradient to text */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Optional: Adjust letter spacing or styling */
+  letter-spacing: 2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Style for Name Text */
+.nameText {
+  font-size: 3.5rem;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+}
+
+.spacing {
+  margin-left: 1.0rem; /* Adjust this value to set space between words */
+}
+
+/* Typing Animation for Role */
+.animationText {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: center;
+  background: linear-gradient(90deg, #ff6ec7, #6eafff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block; /* Ensure gradient applies properly to inline text */
+}
+
+
+.heroText p {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+
+
+/* Button container */
+.buttons {
+  display: flex;
+  margin-top: 20px;
+  
+flex: 1;
+
+
+ 
+}
+
+.glowingButton {
+  font-size: 1rem;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0.5em 1.5em;
+  margin: 2rem;
+  border-radius: 2em; /* Adjust this for a more rounded corner */
+  position: relative;
+  color:#ff00ff;
+  border: 1px solid #fff;
+  text-align: center;
+  background-color: transparent;
+  box-shadow: 0 0 5px #fff, 0 0 10px #ff00ff, 0 0 15px #ff00ff;
+  transition: all 0.3s ease-in-out;
+  margin-left: 20px;
+}
+
+.glowingButton:hover {
+  box-shadow: 0 0 5px #fff, 0 0 15px #ff00ff, 0 0 25px #ff00ff, 0 0 35px #ff00ff, 0 0 50px #ff00ff;
+  color: #ff00ff;
+  border: 2px solid #ff00ff;
+  transform: scale(1.05);
+}
+
+.glowingButton:focus {
+  outline: none;
+  box-shadow: 0 0 5px #fff, 0 0 15px #ff00ff, 0 0 25px #ff00ff, 0 0 35px #ff00ff, 0 0 50px #ff00ff;
+  color: #ff00ff;
+  border: 2px solid #ff00ff;
+}
+
+.glowingButton:active {
+  transform: scale(0.98);
+}
+
+
+/* Social Icons */
+.socialIcons {
+  margin-top: 35px;
+  display: flex;
+  gap: 20px;
+
+}
+
+.socialIcons a {
+  color: white;
+  font-size: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.socialIcons a:hover {
+  transform: scale(1.2);
+}
+
+/* Image Container */
+.imageContainer {
+  position: relative;
+  top: 50px;
+  width: 360px;
+  height: 320px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.heroImage {
+  width: 340px;
+  height: 320px;
+
+  object-fit: cover;
+  border-radius: 50%;
+  
+  transition: transform 0.3s ease-in-out;
+}
+
+.heroImage:hover {
+  transform: scale(1.1);
+}
+
+/* Circular Dashed Border */
+.circularDashedBorder {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  margin: auto;
+  width: 100%; /* Match the container's width */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0; /* Behind the profile image */
+  animation: dashedRotate 40s linear infinite;
+}
+
+.circularDashedBorder svg {
+  width: 100%;
+  height: 100%;
+}
+
+.circularDashedBorder svg circle {
+  fill: none;
+  stroke: url(#gradient);
+  stroke-width: 1;
+  stroke-dasharray: 1,5,3,25,7;
+  stroke-dashoffset: 0;
+  animation: dashMove 8s linear infinite;
+}
+
+@keyframes dashedRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dashMove {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 250;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Base Styles: Already applied styles are for larger screens */
+
+/* Responsive Design for Tablets and Mobile Screens */
+@media (max-width: 1024px) {
+  .heroSection {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    margin-top: 0;
+    padding: 10px;
+    position: relative;
+  }
+
+  .contentContainer {
+    margin-left: 0; /* Center content */
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .howdyText,
+  .howdy {
+    font-size: 50px; /* Adjust text size for smaller screens */
+    margin-top: -10px;
+  }
+
+  .nameText {
+    font-size: 2rem; /* Adjust name text size */
+  }
+
+  .animationText {
+    font-size: 1.5rem; /* Adjust font size */
+  }
+
+  .buttons {
+    flex-direction: column; /* Stack buttons vertically */
+    margin-top: 10px;
+  }
+
+  .glowingButton {
+    margin: 10px auto; /* Center buttons */
+    font-size: 0.9rem; /* Reduce button size */
+  }
+
+  
+    .socialIcons {
+      display: flex;
+      justify-content: center; /* Center the icons */
+      margin-top: 20px;       /* Add space from the button above */
+      gap: 15px;              /* Adjust the spacing between icons */
+    }
+    .heroImage {
+      width: 300px;
+      height: 210px;
+    
+      object-fit: cover;
+     
+    }
+    
+  
+
+  .imageContainer {
+    width: 220px; /* Adjust image size */
+    height: 220px;
+  }
+
+  .circularDashedBorder {
+    width: 100%; /* Match the container's width */
+  height: 100%;
+  }
+}
+
+
+
+
+/* For very small devices */
+@media (max-width: 480px) {
+  .howdyText,
+  .howdy {
+    font-size: 40px; /* Further reduce text size */
+  }
+
+  .nameText {
+    font-size: 1.5rem;
+  }
+
+  .animationText {
+    font-size: 1.2rem;
+  }
+
+  .glowingButton {
+    font-size: 0.8rem;
+    padding: 0.4em 1em;
+  }
+
+  .imageContainer {
+    width: 200px; /* Further adjust image size */
+    height: 200px;
+  }
+
+  .circularDashedBorder {
+    width: 180px;
+    height: 180px;
+  }
+}

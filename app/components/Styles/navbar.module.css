@@ -1,0 +1,103 @@
+/* Navbar container styling */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 10px 80px;
+  background-color: rgb(44, 46, 46);
+  z-index: 1000;
+  box-shadow: 0 0 10px #ff00ff;
+  display: flex;
+  justify-content: flex-end; /* Align the menu to the right */
+  align-items: center;
+  transition: transform 0.3s ease; /* Smooth hide/show transition */
+}
+
+/* When navbar is hidden, move it off the screen */
+.hideNavbar {
+  transform: translateY(-100%);
+}
+
+/* Navbar inner container */
+.navbarContainer {
+  display: flex;
+  justify-content: flex-end; /* Align items to the right */
+  align-items: center;
+  width: 100%; /* Make sure it spans the full width */
+  font-size: 1.2rem;
+}
+
+/* Menu list for desktop */
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+/* Menu items container */
+.menuList {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  gap: 30px; /* Space between menu items */
+} 
+
+/* Individual menu items */
+.menuItem {
+  position: relative;
+  color: #ffffff;
+}
+
+.menuItem:hover {
+  color: #d006a8 !important; /* Set hover color to pink and force it with !important */
+  transform: scale(1.1); /* Zoom effect on hover */
+}
+
+
+/* Menu link styling */
+.menuLink {
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 5px 20px;
+  color: rgb(81, 26, 26); /* Ensure the default link color is white */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for the menu links */
+.menuLink:hover {
+  color: #d006a8 !important; /* Set hover color to pink and force it with !important */
+  transform: scale(1.1); /* Zoom effect on hover */
+}
+
+/* Active link styling */
+.menuLink.active {
+  color: #fbbf24;
+  border-bottom: 2px solid #fbbf24; /* Add border at the bottom of the active link */
+}
+
+/* Mobile menu styles */
+.mobileMenu {
+  display: none; /* Hide on desktop, show with media query */
+}
+
+/* Small screens (Mobile) */
+@media screen and (max-width: 768px) {
+  .menu {
+    display: none; /* Hide menu by default */
+  }
+
+  .mobileMenu {
+    display: block; /* Show mobile menu toggle button */
+  }
+
+  .menuOverlay {
+    opacity: 1;
+    visibility: visible; /* Show the overlay menu when toggled */
+  }
+
+  .menuOverlay.open {
+    opacity: 1;
+    visibility: visible;
+  }
+}

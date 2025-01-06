@@ -1,0 +1,172 @@
+/* General styles for Skills Section */
+.skillsSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  color: #ffffff;
+  margin-top: 0; /* Removed negative margin */
+  flex-wrap: wrap; /* Ensures wrapping on smaller screens */
+}
+
+.skillsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 90%;
+  max-width: 1200px;
+  gap: 2rem;
+  margin-top: 0;
+  padding-bottom: 10px;
+}
+
+.leftSide {
+  flex: 1;
+  text-align: left;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 0.5rem;
+}
+
+.category {
+  margin-bottom: 2.8rem;
+  margin-top: 20px;
+}
+
+.category h2 {
+  font-size: 1.9rem;
+  margin-bottom: 1rem;
+  color: #e4e4e4;
+}
+
+.icons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Style for "Howdy" */
+.howdyText {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  margin-top: 0; /* Adjusted margin */
+  font-family: cursive;
+}
+
+.howdy {
+  font-size: 120px; /* Reduced default size */
+  text-align: center;
+  margin-top: 0; /* Adjusted margin */
+  font-family: cursive;
+
+  /* Gradient Background */
+  background: linear-gradient(90deg, #ff6ec7, #6eafff);
+
+  /* Apply gradient to text */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Optional: Adjust letter spacing or styling */
+  letter-spacing: 2px;
+}
+
+.rightSide {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rightSide img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin: 0; /* Removed extra margins */
+}
+
+/* Responsive adjustments */
+
+/* Tablet screens (up to 768px) */
+@media (max-width: 768px) {
+  .skillsSection {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .skillsContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .leftSide {
+    width: 100%;
+    text-align: center;
+  }
+
+  .rightSide {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .rightSide img {
+    margin-top: 20px; /* Adjusted margin for better spacing */
+    margin-left: 0; /* Removed unnecessary left margin */
+  }
+
+  .howdy {
+    font-size: 100px; /* Reduced font size */
+  }
+
+  .howdyText {
+    font-size: 60px; /* Reduced font size */
+  }
+}
+
+/* Mobile screens (up to 480px) */
+@media (max-width: 480px) {
+  .skillsSection {
+    padding: 1rem;
+  }
+
+  .skillsContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .howdy {
+    font-size: 80px; /* Further reduced font size */
+  }
+
+  .howdyText {
+    font-size: 50px; /* Further reduced font size */
+  }
+
+  .heading {
+    font-size: 1.5rem; /* Adjusted for smaller screens */
+  }
+
+  .category h2 {
+    font-size: 1.5rem; /* Adjusted for smaller screens */
+  }
+
+  .icons {
+    gap: 0.5rem; /* Reduced gap between icons */
+  }
+
+  .rightSide img {
+    margin-top: 10px; /* Further adjusted for smaller screens */
+  }
+}

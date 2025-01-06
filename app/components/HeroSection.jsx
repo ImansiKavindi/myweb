@@ -1,58 +1,104 @@
+"use client";
+import React from "react";
+import Image from "next/image";
+import TypeAnimation from "react-type-animation";
 import { motion } from "framer-motion";
-import { TypeAnimation } from "react-type-animation";
+import Link from "next/link";
+import { FaGithub, FaLinkedin } from "react-icons/fa"; // Import icons
+import styles from "../components/Styles/herosection.module.css"; // Import the CSS module
 
 const HeroSection = () => {
   return (
-    <section className="lg:py-16">
-      <div className="grid grid-cols-1 sm:grid-cols-12">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
-        >
-          <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
-              Hello, I&apos;m{" "}
-            </span>
-            <br />
+    <div className={styles.heroSection}>
+      <div className={styles.contentContainer}>
+        <div className={styles.heroText}>
+          <h1>
+            <span className={styles.howdy}>H</span> <span className={styles.howdyText}>owdy,</span>  <br />
+            <span className={styles.nameText}>I&apos;m</span>
+            <span className={`${styles.nameText} ${styles.spacing}`}>Imansi</span>
+            <span className={`${styles.nameText} ${styles.spacing}`}>Kulathunga</span>
+          </h1>
+
+          {/* Typing Animation for Role */}
+          <motion.div
+            initial={{ opacity: 0, y: 80 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
             <TypeAnimation
               sequence={[
-                "Judy",
-                1000,
+                "Fullstack Developer",
+                3000,
                 "Web Developer",
-                1000,
-                "Mobile Developer",
-                1000,
-                "UI/UX Designer",
-                1000,
+                2000,
+                "Android Developer",
+                2000,
               ]}
               wrapper="span"
-              speed={50}
+              className={styles.animationText}
               repeat={Infinity}
             />
-          </h1>
-          <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            voluptuous.
+          </motion.div>
+
+          {/* Description */}
+          <p>
+            I am a proactive and detail-oriented undergraduate specializing in
+            Information Technology.
           </p>
-          <div className="flex flex-wrap gap-4">
+        </div>
+
+        {/* Buttons */}
+        <div className={styles.buttons}>
+        <a href="/images/cv.pdf" className={styles.glowingButton} download>
+    Download CV
+  </a>
+
+          {/* Social Icons */}
+          <div className={styles.socialIcons}>
             <a
-              href="#portfolio"
-              className="px-6 py-3 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition"
+              href="https://github.com/ImansiKavindi"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              View Portfolio
+              <FaGithub />
             </a>
             <a
-              href="#contact"
-              className="px-6 py-3 border border-secondary-500 text-secondary-500 rounded-lg hover:bg-secondary-500 hover:text-white transition"
+              href="https://www.linkedin.com/in/imansi-kulathunga-677865281/"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Contact Me
+              <FaLinkedin />
             </a>
           </div>
-        </motion.div>
+        </div>
       </div>
-    </section>
+
+      {/* Profile Image and Animated Dashed Frame */}
+      <div className={styles.imageContainer}>
+        <Image
+          src="/images/profile.png" // Replace with your actual image path
+          alt="Imansi Kavindi"
+          className={styles.heroImage}
+          width={320}
+          height={320}
+        />
+        <div className={styles.circularDashedBorder}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+            <defs>
+              <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#ff6ec7" />
+                <stop offset="50%" stopColor="#6eafff" />
+                <stop offset="100%" stopColor="#ff6ec7" />
+              </linearGradient>
+            </defs>
+            <circle cx="60" cy="60" r="60" />
+          </svg>
+        </div>
+      </div>
+
+
+      
+    </div>
   );
 };
 

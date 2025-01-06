@@ -1,0 +1,185 @@
+/* General styling for the About section */
+.aboutSection {
+    padding: 10px 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    border-radius: 10px;
+    width: 90%; /* Adjust to fit mobile */
+    margin: 0 auto; /* Center align */
+    border-bottom: #fff;
+    height: auto; /* Adjust height for smaller screens */
+    background-color: rgba(44, 46, 46, 0.259);
+}
+
+.about {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contentContainer {
+    max-width: 800px;
+    margin-bottom: 40px;
+    margin-top: -50px; /* Adjust for smaller screens */
+}
+
+.aboutText p {
+    font-size: 1rem; /* Smaller text for mobile */
+    line-height: 1.5;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.howdy {
+    font-size: 90px; /* Scale down for smaller screens */
+    font-family: cursive;
+    background: linear-gradient(90deg, #ff6ec7, #6eafff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px;
+}
+
+.howdyText {
+    font-size: 40px; /* Adjust for mobile */
+    color: #ffffff;
+    font-family: cursive;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+    flex-wrap: wrap;
+    font-weight: bolder;
+}
+
+.tabButton {
+    font-size: 1rem; /* Scale down */
+    cursor: pointer;
+    text-decoration: none;
+    margin: 1rem;
+    border-radius: 2em;
+    color: #ff00ff;
+    padding: 10px 20px;
+    text-align: center;
+    background-color: transparent;
+    box-shadow: 0 0 5px #fff, 0 0 10px #ff00ff, 0 0 15px #ff00ff;
+    transition: all 0.3s ease-in-out;
+}
+
+.tabButton:hover {
+    box-shadow: 0 0 5px #fff, 0 0 10px #ff00ff, 0 0 15px #ff00ff, 0 0 20px #ff00ff;
+    color: #ff00ff;
+    border: 2px solid #ff00ff;
+    transform: scale(1.05);
+}
+
+.imageContainer {
+    display: flex;
+    flex-direction: column; /* Stack content for mobile */
+    gap: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #1e1e1e;
+    border-radius: 12px;
+}
+
+.heroImage {
+    border: 1px solid #000000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    background-color: #ffffff;
+    max-width: 100%;
+    height: auto;
+}
+
+.certItem {
+    color: rgb(252, 131, 212);
+    text-align: left;
+}
+
+.cerfy {
+    margin-top: 10px;
+    padding: 20px;
+    background: #1e1e1e;
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 0.9rem; /* Adjust font size for mobile */
+    line-height: 1.6;
+}
+
+.certImage {
+    max-width: 70%;
+    height: auto;
+    width: 80px; /* Resize for smaller screens */
+}
+
+/* Responsive Media Queries */
+
+/* Mobile screens */
+@media (max-width: 768px) {
+    .aboutSection {
+        padding: 10px;
+        width: 95%; /* Fit within mobile width */
+        margin: 0 auto;
+    }
+
+    .aboutText p {
+        font-size: 0.9rem;
+    }
+
+    .howdy {
+        font-size: 60px;
+    }
+
+    .howdyText {
+        font-size: 30px;
+    }
+
+    .tabs {
+        gap: 10px;
+    }
+
+    .tabButton {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    .heroImage {
+        max-width: 90%;
+    }
+
+    .cerfy {
+        font-size: 0.8rem;
+        padding: 15px;
+    }
+}
+
+/* Very small screens (e.g., old phones) */
+@media (max-width: 480px) {
+    .aboutSection {
+        padding: 5px;
+        width: 100%; /* Take full screen width */
+    }
+
+    .howdy {
+        font-size: 40px;
+    }
+
+    .howdyText {
+        font-size: 20px;
+    }
+
+    .tabButton {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+
+    .heroImage {
+        max-width: 80%;
+    }
+
+    .cerfy {
+        font-size: 0.7rem;
+        padding: 10px;
+    }
+}
