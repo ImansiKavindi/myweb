@@ -1,22 +1,22 @@
 /* General styling for the About section */
 .section {
     text-align: center;
-    background-color: #0000002f;
-    max-width: 100%; /* Ensure it fits within the screen */
+    background-color: #ba29292f;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 1rem; /* Add padding for mobile-friendly spacing */
+    padding: 1rem;
 }
 
 .about {
-    max-width: 100%; 
+    max-width: 100%;
     margin: 0 auto;
-    padding: 1rem; 
+    padding: 1rem;
 }
 
 .contentContainer {
-    max-width: 90%; /* Fit within mobile screens */
+    max-width: 90%;
     margin: 1rem auto;
-    text-align: center; /* Center-align content for better readability */
+    text-align: center;
     padding: 1rem;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .howdy {
-    font-size: 3rem; /* Reduced size for mobile */
+    font-size: 3rem;
     font-family: cursive;
     background: linear-gradient(90deg, #ff6ec7, #6eafff);
     -webkit-background-clip: text;
@@ -38,7 +38,7 @@
 }
 
 .howdyText {
-    font-size: 2rem; /* Adjusted for mobile */
+    font-size: 2rem;
     color: #ffffff;
     font-family: cursive;
     margin-bottom: 1rem;
@@ -49,7 +49,7 @@
     justify-content: center;
     margin-top: 1rem;
     gap: 1rem;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    flex-wrap: wrap;
     font-weight: bold;
 }
 
@@ -76,7 +76,7 @@
 /* Container for Image and Content */
 .imageContainer {
     display: flex;
-    flex-direction: column; /* Stack content vertically for smaller screens */
+    flex-direction: column;
     align-items: center;
     gap: 1rem;
     margin: 1rem auto;
@@ -91,15 +91,15 @@
     border: 1px solid #000000;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     max-width: 90%;
-    height: auto; /* Maintain aspect ratio */
+    height: auto;
     background-color: #ffffff;
     padding: 10px;
 }
 
 /* Content Styling */
 .certItem {
-    color: rgb(252, 131, 212); 
-    text-align: center; /* Center text for mobile */
+    color: rgb(252, 131, 212);
+    text-align: center;
 }
 
 .cerfy {

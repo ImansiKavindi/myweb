@@ -11,7 +11,7 @@
 .projectContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 3.8rem;
+  gap: 2rem;
 }
 
 .projectCard {
@@ -24,6 +24,7 @@
   max-width: 400px;
   height: auto;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .projectCard:hover {
@@ -174,4 +175,64 @@
 
 .des p {
   padding-top: 10px;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+  .projectsSection {
+    padding: 30px;
+    margin-top: -200px;
+  }
+
+  .howdy {
+    font-size: 100px;
+  }
+
+  .howdyText {
+    font-size: 40px;
+  }
+
+  .projectCard {
+    max-width: 90%;
+    margin: 20px auto;
+  }
+
+  .projectContainer {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .githubButton {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .projectsSection {
+    padding: 20px;
+    margin-top: -100px;
+  }
+
+  .howdy {
+    font-size: 70px;
+  }
+
+  .howdyText {
+    font-size: 30px;
+  }
+
+  .projectCard {
+    max-width: 100%;
+    margin: 10px auto;
+  }
+
+  .projectContainer {
+    gap: 1.5rem;
+  }
+
+  .githubButton {
+    width: 40px;
+    height: 40px;
+  }
 }
