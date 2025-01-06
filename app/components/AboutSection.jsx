@@ -34,7 +34,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section id="about" className={styles.aboutSection}>
+    <section id="about" className={styles.section}>
       <div className={styles.about}>
         <div className={styles.contentContainer}>
           <div className={styles.aboutText}>

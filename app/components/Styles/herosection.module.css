@@ -10,7 +10,7 @@
   color: #fff;
   margin-top: -70px; /* Moves the section 20px closer to the top of the page */
   position:absolute;
- 
+
   
  
 }
@@ -21,6 +21,7 @@
   margin-left: 100px;
   margin-top: 0px;
   align-items: center;
+ 
 
 }
 
@@ -124,6 +125,7 @@ flex: 1;
   box-shadow: 0 0 5px #fff, 0 0 10px #ff00ff, 0 0 15px #ff00ff;
   transition: all 0.3s ease-in-out;
   margin-left: 20px;
+  
 }
 
 .glowingButton:hover {

@@ -1,36 +1,42 @@
 /* General styling for the About section */
-.aboutSection {
-    padding: 10px 20px;
-    font-family: Arial, sans-serif;
+.section {
     text-align: center;
-    border-radius: 10px;
-    width: 90%; /* Adjust to fit mobile */
-    margin: 0 auto; /* Center align */
-    border-bottom: #fff;
-    height: auto; /* Adjust height for smaller screens */
-    background-color: rgba(44, 46, 46, 0.259);
+  background-color: #0000002f;
+    /* Full width of the viewport */
+    max-width: 1000%; /* Ensure it doesn’t exceed screen width */
+     /* Optional: add padding to ensure content doesn’t touch the edges */
+    margin-left: -1rem;
+   
 }
 
 .about {
-    max-width: 1200px;
+    max-width: 100%; /* Ensure the about section doesn’t exceed the screen width */
     margin: 0 auto;
+    
 }
 
 .contentContainer {
-    max-width: 800px;
-    margin-bottom: 40px;
-    margin-top: -50px; /* Adjust for smaller screens */
+    max-width: 50%; /* Adjust content container to fit full screen */
+    margin-bottom: 30px;
+    margin-top: -100px;
+    margin-left: 20rem;
+    
+
+
+
+
 }
 
+
 .aboutText p {
-    font-size: 1rem; /* Smaller text for mobile */
-    line-height: 1.5;
+    font-size: 1.3rem;
+    line-height: 1.7;
     color: #ffffff;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .howdy {
-    font-size: 90px; /* Scale down for smaller screens */
+    font-size: 150px;
     font-family: cursive;
     background: linear-gradient(90deg, #ff6ec7, #6eafff);
     -webkit-background-clip: text;
@@ -39,7 +45,7 @@
 }
 
 .howdyText {
-    font-size: 40px; /* Adjust for mobile */
+    font-size: 80px;
     color: #ffffff;
     font-family: cursive;
 }
@@ -47,20 +53,23 @@
 .tabs {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
-    gap: 10px;
-    flex-wrap: wrap;
+    margin-top: 30px;
+    gap: 80px; /* Smaller gap for better responsiveness */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
     font-weight: bolder;
 }
 
 .tabButton {
-    font-size: 1rem; /* Scale down */
+    font-size: 50rem;
+    display: inline-block;
     cursor: pointer;
     text-decoration: none;
-    margin: 1rem;
+    margin: 2rem;
     border-radius: 2em;
+    position: relative;
     color: #ff00ff;
-    padding: 10px 20px;
+    padding: 2px 40px;
+    padding-top: 15px;
     text-align: center;
     background-color: transparent;
     box-shadow: 0 0 5px #fff, 0 0 10px #ff00ff, 0 0 15px #ff00ff;
@@ -74,59 +83,126 @@
     transform: scale(1.05);
 }
 
+/* Container for Image and Content */
 .imageContainer {
     display: flex;
-    flex-direction: column; /* Stack content for mobile */
-    gap: 10px;
-    margin-top: 10px;
-    padding: 10px;
+    align-items: center;
+    gap: 20px;
+    margin-top: 15px;
+    padding: 15px 30px;
     background-color: #1e1e1e;
     border-radius: 12px;
+    flex-direction: column; /* Stack content vertically for smaller screens */
 }
 
+/* Image Styling */
 .heroImage {
     border: 1px solid #000000;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
     background-color: #ffffff;
     max-width: 100%;
-    height: auto;
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Content Styling */
+.contentContainer ul {
+    list-style-type: none;
+    padding: 0;
 }
 
 .certItem {
-    color: rgb(252, 131, 212);
+    color: rgb(252, 131, 212); /* Change the color to pink */
     text-align: left;
 }
 
 .cerfy {
     margin-top: 10px;
-    padding: 20px;
+    padding: 40px;
     background: #1e1e1e;
     border-radius: 12px;
     color: #ffffff;
-    font-size: 0.9rem; /* Adjust font size for mobile */
-    line-height: 1.6;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.certItem p {
+    font-size: 1rem;
+}
+
+.certImageWrapper {
+    margin-right: 15px; /* Space between the image and text */
+}
+
+.certContent {
+    display: flex;
+    align-items: center;
 }
 
 .certImage {
-    max-width: 70%;
+    padding-bottom: 20px;
+    max-width: 100%;
     height: auto;
-    width: 80px; /* Resize for smaller screens */
+    width: 100px; /* Adjust as needed */
 }
 
 /* Responsive Media Queries */
 
-/* Mobile screens */
-@media (max-width: 768px) {
-    .aboutSection {
-        padding: 10px;
-        width: 95%; /* Fit within mobile width */
-        margin: 0 auto;
-    }
-
+/* For tablets and smaller desktops */
+@media (max-width: 1024px) {
     .aboutText p {
-        font-size: 0.9rem;
+        font-size: 1.1rem;
     }
 
+    .howdy {
+        font-size: 120px;
+    }
+
+    .howdyText {
+        font-size: 60px;
+    }
+
+    .tabs {
+        gap: 15px;
+    }
+}
+
+/* For mobile screens */
+@media (max-width: 768px) {
+    .aboutText p {
+        font-size: 1rem;
+    }
+
+    .howdy {
+        font-size: 90px;
+    }
+
+    .howdyText {
+        font-size: 40px;
+    }
+
+    .tabButton {
+        font-size: 0.9rem;
+        padding: 8px 20px;
+    }
+
+    .imageContainer {
+        gap: 10px;
+        padding: 10px 20px;
+    }
+
+    .heroImage {
+        max-width: 80%;
+    }
+
+    .cerfy {
+        font-size: 1rem;
+        padding: 20px;
+    }
+}
+
+/* For very small screens (e.g., old phones) */
+@media (max-width: 480px) {
     .howdy {
         font-size: 60px;
     }
@@ -135,51 +211,38 @@
         font-size: 30px;
     }
 
-    .tabs {
-        gap: 10px;
-    }
-
     .tabButton {
-        font-size: 0.9rem;
-        padding: 8px 15px;
+        font-size: 0.8rem;
+        padding: 5px 15px;
     }
 
     .heroImage {
-        max-width: 90%;
+        max-width: 70%;
     }
 
     .cerfy {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         padding: 15px;
     }
 }
 
-/* Very small screens (e.g., old phones) */
-@media (max-width: 480px) {
+/* For large screens (e.g., ultra-wide monitors) */
+@media (min-width: 1200px) {
+    .aboutSection {
+        width: 50rem;
+        margin-left: 15%;
+        padding: 20px 40px;
+    }
+}
+
+/* For landscape orientation */
+@media (max-width: 768px) and (orientation: landscape) {
     .aboutSection {
         padding: 5px;
-        width: 100%; /* Take full screen width */
-    }
-
-    .howdy {
-        font-size: 40px;
-    }
-
-    .howdyText {
-        font-size: 20px;
-    }
-
-    .tabButton {
         font-size: 0.8rem;
-        padding: 5px 10px;
     }
 
     .heroImage {
-        max-width: 80%;
-    }
-
-    .cerfy {
-        font-size: 0.7rem;
-        padding: 10px;
+        max-width: 90%;
     }
 }
