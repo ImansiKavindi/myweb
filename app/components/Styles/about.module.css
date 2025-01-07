@@ -1,9 +1,10 @@
 /* General styling for the About section */
 .section {
     text-align: center;
-    background-color: #ba29292f;
+    
+    margin-top: 100px;
     max-width: 100%;
-    margin: 0 auto;
+    
     padding: 1rem;
 }
 
@@ -21,14 +22,14 @@
 }
 
 .aboutText p {
-    font-size: 1rem;
+    font-size: 1.5rem;
     line-height: 1.5;
     color: #ffffff;
     margin-bottom: 1rem;
 }
 
 .howdy {
-    font-size: 3rem;
+    font-size: 180px;
     font-family: cursive;
     background: linear-gradient(90deg, #ff6ec7, #6eafff);
     -webkit-background-clip: text;
@@ -38,7 +39,7 @@
 }
 
 .howdyText {
-    font-size: 2rem;
+    font-size:80px;
     color: #ffffff;
     font-family: cursive;
     margin-bottom: 1rem;
