@@ -1,17 +1,19 @@
 /* Navbar container styling */
 .navbar {
-  position: sticky; /* Stays at the top */
+  position: sticky;
   top: 0;
   width: 100%;
-  padding: 10px 5%; /* Flexible padding for different screen sizes */
+  padding: 10px 0; /* Removed side padding */
   background-color: rgb(44, 46, 46);
   z-index: 1000;
-  box-shadow: 0 4px 6px rgba(255, 0, 255, 0.2); /* Softer shadow */
+  box-shadow: 0 4px 6px rgba(255, 0, 255, 0.2);
   display: flex;
-  justify-content: space-between; /* Space between logo and menu */
   align-items: center;
   transition: transform 0.3s ease-in-out;
+  box-sizing: border-box; /* Make sure padding is included within width */
+  border-bottom: #fbbf24;
 }
+
 
 /* Navbar when hidden */
 .hideNavbar {
@@ -25,7 +27,7 @@
   align-items: center;
   width: 100%;
   font-size: 1rem;
-  padding-right: 10px;
+  padding-right: 80px;
 }
 
 /* Desktop menu */

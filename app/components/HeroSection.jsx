@@ -4,6 +4,7 @@ import Image from "next/image";
 import TypeAnimation from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import '../globals.css';
 import { FaGithub, FaLinkedin } from "react-icons/fa"; // Import icons
 import styles from "../components/Styles/herosection.module.css"; // Import the CSS module
 

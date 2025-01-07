@@ -25,19 +25,14 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* globals.css */
-body {
+html, body, #root {
+  height: 100%;
   margin: 0;
   padding: 0;
-  font-family: "Inter", sans-serif;
 }
 
-.container {
-  max-width: 10000px;
-}
-
-section {
-  margin: 20px 0;
-  margin-left: 80px;
-  margin-top: 270px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
