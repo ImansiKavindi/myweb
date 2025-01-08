@@ -5,6 +5,7 @@
     max-width: 100%;
     margin: 0 auto;
     padding: 1rem;
+    border-bottom:1px solid #fb0dbf24
 }
 
 .about {
@@ -49,7 +50,7 @@
     display: flex;
     justify-content: center;
     margin-top: 2rem;
-    gap: 1rem;
+    gap: 7rem;
     flex-wrap: wrap;
     font-weight: bold;
 }
@@ -101,6 +102,20 @@
 .certItem {
     color: rgb(252, 131, 212);
     text-align: center;
+}
+
+
+.certText p{
+ font-size: 1rem;
+}
+
+.certImageWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem auto;
+    padding: 1rem;
 }
 
 .cerfy {

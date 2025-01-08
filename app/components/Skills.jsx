@@ -5,15 +5,19 @@ import styles from "../components/Styles/skills.module.css"; // Import CSS modul
 const SkillsSection = () => {
   return (
     <section id="skills" className={styles.skillsSection}>
-      <div className={styles.skillsContainer}>
-        {/* Left Side - Categories */}
-        <div className={styles.leftSide}>
 
-        <h1>
+<h1>
               <span className={styles.howdy}>S</span>
               <span className={styles.howdyText}>kills</span>
              
             </h1>
+      <div className={styles.skillsContainer}>
+        {/* Left Side - Categories */}
+        
+        
+        <div className={styles.leftSide}>
+
+      
 
           <div className={styles.category}>
             <h2>Languages</h2>

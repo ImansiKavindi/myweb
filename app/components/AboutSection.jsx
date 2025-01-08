@@ -102,8 +102,8 @@ const AboutSection = () => {
                           src="/images/sliit1.jpg"
                           alt="AI/ML Engineer - Stage 1 Certificate"
                           className={styles.certImage}
-                          width={100}
-                          height={100}
+                          width={300}
+                          height={300}
                         />
                       </div>
                       <div className={styles.certText}>
@@ -122,8 +122,8 @@ const AboutSection = () => {
                           src="/images/sliit2.jpg"
                           alt="AI/ML Engineer - Stage 2 Certificate"
                           className={styles.certImage}
-                          width={100}
-                          height={100}
+                          width={300}
+                          height={300}
                         />
                       </div>
                       <div className={styles.certText}>
@@ -142,8 +142,8 @@ const AboutSection = () => {
                           src="/images/jp.jpg"
                           alt="Java Programming Certificate"
                           className={styles.certImage}
-                          width={100}
-                          height={100}
+                          width={300}
+                          height={300}
                         />
                       </div>
                       <div className={styles.certText}>
@@ -160,8 +160,8 @@ const AboutSection = () => {
                           src="/images/oop.jpg"
                           alt="OOPs in Java Certificate"
                           className={styles.certImage}
-                          width={100}
-                          height={100}
+                          width={300}
+                          height={300}
                         />
                       </div>
                       <div className={styles.certText}>
