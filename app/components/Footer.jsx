@@ -26,20 +26,17 @@ const Footer = () => {
       position: 'fixed',
       bottom: '20px',
       right: '20px',
-      backgroundColor: '#ff00ff',
+      
       color: '#fff',
       border: 'none',
-      borderRadius: '50%',
+      borderRadius: '30%',
       padding: '10px 15px',
       fontSize: '18px',
       cursor: 'pointer',
       boxShadow: '0 0 10px #ff00ff',
-      transition: 'background-color 0.3s',
-      zIndex: 1000, // Make sure the button stays on top
+      // Make sure the button stays on top
     },
-    scrollToTopButtonHover: {
-      backgroundColor: '#ff00cc',
-    },
+    
   };
 
   // Scroll to top function
@@ -61,8 +58,8 @@ const Footer = () => {
       <button
         style={styles.scrollToTopButton}
         onClick={scrollToTop}
-        onMouseOver={(e) => (e.target.style.backgroundColor = '#ff00cc')}
-        onMouseOut={(e) => (e.target.style.backgroundColor = '#ff00ff')}
+        onMouseOver={(e) => (e.target)}
+        onMouseOut={(e) => (e.target)}
       >
         ↑
       </button>

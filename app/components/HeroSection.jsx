@@ -52,25 +52,15 @@ const HeroSection = () => {
         <div className={styles.buttons}>
         <a href="/images/cv.pdf" className={styles.glowingButton} download>
     Download CV
-  </a>
+         </a>
 
-          {/* Social Icons */}
-          <div className={styles.socialIcons}>
-            <a
-              href="https://github.com/ImansiKavindi"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaGithub />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/imansi-kulathunga-677865281/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLinkedin />
-            </a>
-          </div>
+         <Link href="/#contact" className={styles.glowingButton} >
+   Hire me
+         </Link>
+         
+
+         
+          
         </div>
       </div>
 

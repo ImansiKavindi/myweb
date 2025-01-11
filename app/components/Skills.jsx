@@ -59,6 +59,7 @@ const SkillsSection = () => {
                 height={50}
               />
             </div>
+           
           </div>
 
           <div className={styles.category}>
@@ -168,8 +169,12 @@ const SkillsSection = () => {
             style={{ width: "400px", height: "400px" }}
           />
         </div>
+       
       </div>
+     
+      
     </section>
+    
   );
 };
 

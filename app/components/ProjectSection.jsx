@@ -72,6 +72,15 @@ const ProjectSection = () => {
 
   return (
     <section id="projects" className={styles.projectsSection}>
+       <div
+  className="bg-[radial-gradient(circle,_rgba(128,0,128,0.7)_0%,_rgba(0,0,0,0)_60%)] 
+    rounded-full 
+    h-[500px] w-[700px] 
+    z-0 blur-lg 
+    absolute top-[2000px] right-[300px]"
+>
+</div>
+
       <h1>
         <span className={styles.howdy}>P</span>
         <span className={styles.howdyText}>rojects</span>
@@ -189,6 +198,15 @@ const ProjectSection = () => {
           </motion.div>
         )}
       </AnimatePresence>
+      <div
+  className="bg-[radial-gradient(circle,_rgba(128,0,128,0.7)_0%,_rgba(0,0,0,0)_50%)] 
+    rounded-full 
+    h-[500px] w-[500px] 
+    z-0 blur-lg 
+    absolute top-[3100px] right-[0px]"
+>
+</div>
+
     </section>
   );
 };

@@ -43,7 +43,14 @@ const AboutSection = () => {
               <span className={styles.howdyText}>bout me</span>
               <br />
             </h1>
-
+           {/* Background Blur */}
+    
+      <div className="bg-[radial-gradient(circle,_rgba(128,0,128,0.7)_0%,_rgba(0,0,0,0)_60%)] 
+    rounded-full 
+    h-[500px] w-[300px] 
+    z-0 blur-lg 
+    absolute top-50 right-1">
+  </div>
             <div>
               <p>
                 As a driven Information Technology undergraduate at SLIIT, I
