@@ -1,68 +1,39 @@
-/* Hero Section */
-
-
-.heroSection  {
-  height: 100vh; /* Full height of the viewport */
+/* Base Styles */
+.heroSection {
+  height: 100vh;
   display: flex;
-  align-items: center; /* Centers content vertically */
-  justify-content: center; /* Centers content horizontally */
-margin-top: -200px;
-
+  align-items: center;
+  justify-content: center;
+  margin-top: -200px;
+  padding: 10px;
 }
 
-
-/* Content Container */
 .contentContainer {
   flex: 1;
   margin-left: 100px;
-  margin-top: 0px;
+  margin-top: 0;
   align-items: center;
- 
-
 }
 
-/* Style for "Howdy" */
 .howdyText {
   font-size: 80px;
   color: #fff;
   text-align: center;
- margin-top: -10px;
-  font-family:cursive;
+  margin-top: -10px;
+  font-family: cursive;
 }
-
 
 .howdy {
   font-size: 150px;
   text-align: center;
   margin-top: -50px;
   font-family: cursive;
-
-  /* Gradient Background */
   background: linear-gradient(90deg, #ff6ec7, #6eafff);
-  
-  /* Apply gradient to text */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
-  /* Optional: Adjust letter spacing or styling */
   letter-spacing: 2px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Style for Name Text */
 .nameText {
   font-size: 3.5rem;
   color: #fff;
@@ -70,10 +41,9 @@ margin-top: -200px;
 }
 
 .spacing {
-  margin-left: 1.0rem; /* Adjust this value to set space between words */
+  margin-left: 1.0rem;
 }
 
-/* Typing Animation for Role */
 .animationText {
   font-size: 1.8rem;
   font-weight: bold;
@@ -82,9 +52,8 @@ margin-top: -200px;
   background: linear-gradient(90deg, #ff6ec7, #6eafff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: inline-block; /* Ensure gradient applies properly to inline text */
+  display: inline-block;
 }
-
 
 .heroText p {
   font-size: 1.3rem;
@@ -92,17 +61,10 @@ margin-top: -200px;
   margin-bottom: 2rem;
 }
 
-
-
-/* Button container */
 .buttons {
   display: flex;
   margin-top: 20px;
-  
-flex: 1;
-
-
- 
+  flex: 1;
 }
 
 .glowingButton {
@@ -112,16 +74,15 @@ flex: 1;
   text-decoration: none;
   padding: 0.5em 1.5em;
   margin: 2rem;
-  border-radius: 2em; /* Adjust this for a more rounded corner */
+  border-radius: 2em;
   position: relative;
-  color:#ff00ff;
+  color: #ff00ff;
   border: 1px solid #fff;
   text-align: center;
   background-color: transparent;
   box-shadow: 0 0 5px #fff, 0 0 10px #ff00ff, 0 0 15px #ff00ff;
   transition: all 0.3s ease-in-out;
   margin-left: 20px;
-  
 }
 
 .glowingButton:hover {
@@ -142,13 +103,10 @@ flex: 1;
   transform: scale(0.98);
 }
 
-
-/* Social Icons */
 .socialIcons {
   margin-top: 35px;
   display: flex;
   gap: 20px;
-
 }
 
 .socialIcons a {
@@ -161,7 +119,6 @@ flex: 1;
   transform: scale(1.2);
 }
 
-/* Image Container */
 .imageContainer {
   position: relative;
   top: 50px;
@@ -170,20 +127,16 @@ flex: 1;
   margin: 0 auto;
   border-radius: 50%;
   overflow: hidden;
-  
   display: flex;
   justify-content: center;
   align-items: center;
- 
 }
 
 .heroImage {
   width: 340px;
   height: 320px;
-
   object-fit: cover;
   border-radius: 50%;
-  
   transition: transform 0.3s ease-in-out;
 }
 
@@ -191,18 +144,17 @@ flex: 1;
   transform: scale(1.1);
 }
 
-/* Circular Dashed Border */
 .circularDashedBorder {
   position: absolute;
   top: 0px;
   left: 0;
   margin: auto;
-  width: 100%; /* Match the container's width */
+  width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 0; /* Behind the profile image */
+  z-index: 0;
   animation: dashedRotate 40s linear infinite;
 }
 
@@ -238,98 +190,73 @@ flex: 1;
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Base Styles: Already applied styles are for larger screens */
-
 /* Responsive Design for Tablets and Mobile Screens */
 @media (max-width: 1024px) {
   .heroSection {
-    flex-direction: column; /* Stack elements vertically */
+    flex-direction: column;
     align-items: center;
     margin-top: 0;
     padding: 10px;
-    position: relative;
   }
 
   .contentContainer {
-    margin-left: 0; /* Center content */
+    margin-left: 0;
     margin-top: 20px;
     text-align: center;
   }
 
   .howdyText,
   .howdy {
-    font-size: 50px; /* Adjust text size for smaller screens */
+    font-size: 50px;
     margin-top: -10px;
   }
 
   .nameText {
-    font-size: 2rem; /* Adjust name text size */
+    font-size: 2rem;
   }
 
   .animationText {
-    font-size: 1.5rem; /* Adjust font size */
+    font-size: 1.5rem;
   }
 
   .buttons {
-    flex-direction: column; /* Stack buttons vertically */
+    flex-direction: column;
     margin-top: 10px;
   }
 
   .glowingButton {
-    margin: 10px auto; /* Center buttons */
-    font-size: 0.9rem; /* Reduce button size */
+    margin: 10px auto;
+    font-size: 0.9rem;
   }
 
-  
-    .socialIcons {
-      display: flex;
-      justify-content: center; /* Center the icons */
-      margin-top: 20px;       /* Add space from the button above */
-      gap: 15px;              /* Adjust the spacing between icons */
-    }
-    .heroImage {
-      width: 300px;
-      height: 210px;
-    
-      object-fit: cover;
-     
-    }
-    
-  
+  .socialIcons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 15px;
+  }
+
+  .heroImage {
+    width: 300px;
+    height: 210px;
+  }
 
   .imageContainer {
-    width: 220px; /* Adjust image size */
+    width: 220px;
     height: 220px;
   }
 
   .circularDashedBorder {
-    width: 100%; /* Match the container's width */
-  height: 100%;
+    width: 100%;
+    height: 100%;
   }
 }
-
-
-
 
 /* For very small devices */
 @media (max-width: 480px) {
   .howdyText,
   .howdy {
-    font-size: 40px; /* Further reduce text size */
+    font-size: 40px;
   }
 
   .nameText {
@@ -346,7 +273,7 @@ flex: 1;
   }
 
   .imageContainer {
-    width: 200px; /* Further adjust image size */
+    width: 200px;
     height: 200px;
   }
 

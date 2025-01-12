@@ -1,12 +1,15 @@
+"use client";
 import Link from "next/link";
 
-const NavLink = ({ href, title }) => {
+const NavLink = ({ href, title, className = "", onClick }) => {
   return (
-    <Link
-      href={href}
-      className="block py-2 pl-3 pr-4 text-[#ADB7BE] sm:text-xl rounded md:p-0 hover:text-white"
-    >
-      {title}
+    <Link href={href}>
+      <a
+        onClick={onClick}
+        className={`text-lg font-medium text-white hover:text-gray-300 transition ${className}`}
+      >
+        {title}
+      </a>
     </Link>
   );
 };
