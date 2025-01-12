@@ -18,9 +18,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-10 bg-[#121212] border-b border-[#33353F]">
       <div className="flex items-center justify-between container mx-auto px-4 py-4">
-        <Link href={"/"} className="text-2xl font-semibold text-white">
-          MyLogo
-        </Link>
+        
         {/* Mobile Menu Toggle */}
         <div className="block md:hidden">
           {!navbarOpen ? (
