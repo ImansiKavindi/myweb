@@ -7,15 +7,17 @@ import GetInTouch from "./components/contact";
 import Footer from "./components/Footer";
 import "./globals.css"; // Ensure global styles are applied
 import ThemeSwitcher from "./components/toggle";
-
+import Head from "next/head"; // Import Head from next/head
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col bg-[#121212]">
-      {/* Navbar */}
-    
+    <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
+
       <Navbar />
-      <ThemeSwitcher /> 
+      <ThemeSwitcher />
 
       {/* Hero Section */}
       <section id="hero" className="container mt-24 mx-auto px-4 sm:px-6 md:px-12 py-6 sm:py-8 md:py-12">
@@ -46,6 +48,6 @@ export default function Home() {
       <section id="footer" className="container mx-auto px-4 sm:px-6 md:px-12 py-6 sm:py-8 md:py-12">
         <Footer />
       </section>
-    </main>
+    </>
   );
 }
