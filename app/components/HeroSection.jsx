@@ -5,12 +5,14 @@ import TypeAnimation from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import '../globals.css';
-import { FaGithub, FaLinkedin } from "react-icons/fa"; // Import icons
+
 import styles from "../components/Styles/herosection.module.css"; // Import the CSS module
 
 const HeroSection = () => {
   return (
+    
     <div className={styles.heroSection}>
+        
       <div className={styles.contentContainer}>
         <div className={styles.heroText}>
           <h1>
@@ -65,15 +67,15 @@ const HeroSection = () => {
       </div>
 
       {/* Profile Image and Animated Dashed Frame */}
-      <div className="relative w-[360px] h-[320px] mt-10 md:mt-0">
+      <div className={styles.imageContainer}>
         <Image
-          src="/images/profile.png"
-          alt="Imansi Kulathunga"
-          className="rounded-full object-cover"
-          width={360}
+          src="/images/profile.png" // Replace with your actual image path
+          alt="Imansi Kavindi"
+          className={styles.heroImage}
+          width={320}
           height={320}
         />
-        <div className="absolute inset-0 w-full h-full rounded-full animate-spin-slow">
+        <div className={styles.circularDashedBorder}>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
             <defs>
               <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -82,21 +84,17 @@ const HeroSection = () => {
                 <stop offset="100%" stopColor="#ff6ec7" />
               </linearGradient>
             </defs>
-            <circle
-              cx="60"
-              cy="55"
-              r="58"
-              fill="none"
-              stroke="url(#gradient)"
-              strokeWidth="1"
-              strokeDasharray="1, 5, 3, 25, 7"
-              strokeDashoffset="0"
-            />
+            <circle cx="60" cy="60" r="60" />
           </svg>
         </div>
       </div>
 
-  
+      <div className="bg-[radial-gradient(circle,_rgba(128,0,128,0.7)_0%,_rgba(0,0,0,0)_60%)] 
+    rounded-full 
+    h-[500px] w-[300px] 
+    z-0 blur-lg 
+    absolute top-[600px] right-1">
+  </div>
       
     </div>
     

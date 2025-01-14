@@ -8,12 +8,7 @@
   padding: 10px;
 }
 
-.contentContainer {
-  flex: 1;
-  margin-left: 100px;
-  margin-top: 0;
-  align-items: center;
-}
+
 
 .howdyText {
   font-size: 80px;
@@ -253,7 +248,7 @@
 }
 
 /* For very small devices */
-@media (max-width: 480px) {
+@media (max-width: 580px) {
   .howdyText,
   .howdy {
     font-size: 40px;

@@ -8,10 +8,12 @@ import Footer from "./components/Footer";
 import "./globals.css"; // Ensure global styles are applied
 import ThemeSwitcher from "./components/toggle";
 
+
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col bg-[#121212]">
       {/* Navbar */}
+    
       <Navbar />
       <ThemeSwitcher /> 
 
