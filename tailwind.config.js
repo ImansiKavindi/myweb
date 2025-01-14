@@ -17,7 +17,7 @@ module.exports = {
         },
       },
       animation: {
-        'spin-slow': 'spin 40s linear infinite',
+        'spin-slow': 'spin 30s linear infinite',
       },
       boxShadow: {
         'pink-glow': '0 0 5px #fff, 0 0 15px #ff00ff, 0 0 25px #ff00ff',

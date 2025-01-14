@@ -32,18 +32,6 @@ html, body, #root {
   box-sizing: border-box;
 }
 /* global.css or media.css */
-@media (max-width: 768px) {
-  .responsive-text {
-      font-size: 14px;
-  }
 
-  .responsive-container {
-      padding: 10px;
-  }
 
-  .responsive-image {
-      width: 100%;
-      height: auto;
-  }
-}
 
