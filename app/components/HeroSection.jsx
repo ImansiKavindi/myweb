@@ -65,15 +65,15 @@ const HeroSection = () => {
       </div>
 
       {/* Profile Image and Animated Dashed Frame */}
-      <div className={styles.imageContainer}>
+      <div className="relative w-[360px] h-[320px] mt-10 md:mt-0">
         <Image
-          src="/images/profile.png" // Replace with your actual image path
-          alt="Imansi Kavindi"
-          className={styles.heroImage}
-          width={320}
+          src="/images/profile.png"
+          alt="Imansi Kulathunga"
+          className="rounded-full object-cover"
+          width={360}
           height={320}
         />
-        <div className={styles.circularDashedBorder}>
+        <div className="absolute inset-0 w-full h-full rounded-full animate-spin-slow">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
             <defs>
               <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -82,7 +82,16 @@ const HeroSection = () => {
                 <stop offset="100%" stopColor="#ff6ec7" />
               </linearGradient>
             </defs>
-            <circle cx="60" cy="60" r="60" />
+            <circle
+              cx="60"
+              cy="55"
+              r="58"
+              fill="none"
+              stroke="url(#gradient)"
+              strokeWidth="1"
+              strokeDasharray="1, 5, 3, 25, 7"
+              strokeDashoffset="0"
+            />
           </svg>
         </div>
       </div>
