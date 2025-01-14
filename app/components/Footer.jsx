@@ -49,10 +49,12 @@ const Footer = () => {
 
   return (
     <footer style={styles.smallFooter}>
+     
       <div style={styles.footerContent}>
         <p>
           Copyright &copy; 2024 by <span style={styles.brand}>@EmnC❤️</span> | All Rights Reserved.
         </p>
+        
       </div>
       {/* Scroll to Top Button */}
       <button

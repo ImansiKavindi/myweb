@@ -126,6 +126,12 @@ const EmailSection = () => {
           </form>
         )}
       </div>
+      <div className="bg-[radial-gradient(circle,_rgba(128,0,128,0.7)_0%,_rgba(0,0,0,0)_60%)] 
+    rounded-full 
+    h-[200px] w-[200px] 
+    z-0 blur-lg 
+    absolute top-[500px] left-[300px]">
+  </div>
     </section>
   );
 };
