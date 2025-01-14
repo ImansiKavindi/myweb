@@ -1,3 +1,4 @@
+import Head from "next/head"; // Import Head from next/head
 import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
 import AboutSection from "./components/AboutSection";
@@ -5,9 +6,10 @@ import Skills from "./components/Skills";
 import ProjectSection from "./components/ProjectSection";
 import GetInTouch from "./components/contact";
 import Footer from "./components/Footer";
-import "./globals.css"; // Ensure global styles are applied
 import ThemeSwitcher from "./components/toggle";
-import Head from "next/head"; // Import Head from next/head
+
+
+import "./globals.css"; // Ensure global styles are applied
 
 export default function Home() {
   return (
