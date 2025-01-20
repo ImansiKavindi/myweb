@@ -196,13 +196,13 @@
 
   .contentContainer {
     margin-left: 0;
-    margin-top: 10px;
+    margin-top: -300px;
     text-align: center;
   }
 
   .howdyText,
   .howdy {
-    font-size: 50px;
+    font-size: 70px;
     margin-top: -10px;
   }
 
@@ -242,10 +242,23 @@
   }
 
   .circularDashedBorder {
-    width: 100%;
-    height: 100%;
+    width: 500%;
+    height: 500%;
+  }
+
+  .circularDashedBorder svg {
+    width: 1000%;
+    height: 800%;
   }
 }
+
+
+
+
+
+
+
+
 
 /* For very small devices */
 @media (max-width: 580px) {
@@ -277,3 +290,5 @@
     height: 180px;
   }
 }
+
+
