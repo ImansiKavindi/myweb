@@ -1,66 +1,76 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-import Link from "next/link";
-import MenuOverlay from "./MenuOverlay";
 
-const navLinks = [
-  { title: "About", path: "#about" },
-  { title: "Projects", path: "#projects" },
-  { title: "Skills", path: "#skills" },
-  { title: "Contact", path: "#contact" },
-];
-
-const Navbar = () => {
+const NavBar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
+  const links = [
+    { title: "Home", path: "/" },
+    { title: "About", path: "/about" },
+    { title: "Services", path: "/services" },
+    { title: "Contact", path: "/contact" },
+  ];
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-10 bg-[#121212] border-b border-[#33353F]">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        {/* Logo Section (Optional) */}
-        <div className="text-white font-bold text-xl">
-          <Link href="/">Portfolio</Link>
+    <nav className="text-white fixed top-0 left-0 w-full shadow-md z-50">
+      <div className="container mx-auto flex justify-between items-center px-4 py-3">
+        {/* Logo */}
+        <div className="text-xl font-bold">
+          <a href="/"></a>
         </div>
 
-        {/* Mobile Menu Toggle */}
-        <div className="block md:hidden">
+        {/* Hamburger Menu for Mobile */}
+        <div className="lg:hidden">
           <button
             onClick={() => setNavbarOpen(!navbarOpen)}
-            aria-expanded={navbarOpen}
-            aria-label="Toggle navigation"
-            className="text-white focus:outline-none"
+            aria-label="Toggle menu"
           >
             {navbarOpen ? (
-              <XMarkIcon className="h-6 w-6" />
+              <XMarkIcon className="h-6 w-6 text-white" />
             ) : (
-              <Bars3Icon className="h-6 w-6" />
+              <Bars3Icon className="h-6 w-6 text-white" />
             )}
           </button>
         </div>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8">
-          {navLinks.map((link, index) => (
-            <Link
-              key={index}
-              href={link.path}
-              className="text-white hover:underline"
-            >
-              {link.title}
-            </Link>
+        {/* Links */}
+        <ul
+          className={`lg:flex space-x-6 hidden ${
+            navbarOpen ? "block absolute top-full left-0  w-full" : ""
+          }`}
+        >
+          {links.map((link, index) => (
+            <li key={index} className="py-2 lg:py-0 text-center">
+              <a
+                href={link.path}
+                className="hover:text-gray-300 block px-4 lg:inline"
+              >
+                {link.title}
+              </a>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
 
-      {/* Mobile Overlay */}
+      {/* Mobile Dropdown Menu */}
       {navbarOpen && (
-        <MenuOverlay
-          links={navLinks}
-          setNavbarOpen={setNavbarOpen}
-        />
+        <ul className="lg:hidden  text-white">
+          {links.map((link, index) => (
+            <li key={index} className="py-2 text-center border-t border-white">
+              <a
+                href={link.path}
+                className="hover:text-gray-300 block"
+                onClick={() => setNavbarOpen(false)}
+              >
+                {link.title}
+              </a>
+            </li>
+          ))}
+        </ul>
       )}
     </nav>
   );
 };
 
-export default Navbar;
+export default NavBar;

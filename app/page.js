@@ -19,7 +19,7 @@ export default function Home() {
       </Head>
 
       <Navbar />
-      <ThemeSwitcher />
+   
 
       {/* Hero Section */}
       <section id="hero" className="container mt-24 mx-auto px-4 sm:px-6 md:px-12 py-6 sm:py-8 md:py-12">
