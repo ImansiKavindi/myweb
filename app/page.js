@@ -6,7 +6,7 @@ import Skills from "./components/Skills";
 import ProjectSection from "./components/ProjectSection";
 import GetInTouch from "./components/contact";
 import Footer from "./components/Footer";
-import ThemeSwitcher from "./components/toggle";
+
 
 
 import "./globals.css"; // Ensure global styles are applied
