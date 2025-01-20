@@ -61,7 +61,7 @@ const EmailSection = () => {
           <Link href="https://github.com/ImansiKavindi" target="_blank" rel="noopener noreferrer">
             <Image src="/images/github..png" alt="Github Icon" width={57} height={60} style={{ objectFit: "contain", transform: "scale(1.5)" }} />
           </Link>
-          <Link href="https://www.linkedin.com/in/imansi-kulathunga-677865281/" target="_blank" rel="noopener noreferrer">
+          <Link href="https://www.linkedin.com/in/imansi-kulathung/" target="_blank" rel="noopener noreferrer">
             <Image src="/images/link.png" alt="LinkedIn Icon" width={60} height={60} />
           </Link>
         </div>
