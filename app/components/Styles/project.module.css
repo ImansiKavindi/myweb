@@ -184,11 +184,11 @@
   }
 
   .howdy {
-    font-size: 100px;
+    font-size: 80px; /* Adjusted for smaller screens */
   }
 
   .howdyText {
-    font-size: 40px;
+    font-size: 50px;
   }
 
   .projectCard {

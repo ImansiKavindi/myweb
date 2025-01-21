@@ -48,12 +48,16 @@ const AboutSection = () => {
      
             <div>
               <p>
+              I’m Imansi Kavindi, a second-year Information Technology student at SLIIT. 
+              With expertise in full-stack web development and Android app development
                 As a driven Information Technology undergraduate at SLIIT, I
                 specialize in full-stack web and mobile development with a
                 strong focus on crafting seamless, high-performance
                 applications.
               </p>
               <p>
+              I thrive in fast-paced, collaborative environments and enjoy tackling complex challenges.
+               As a quick learner and problem-solver, I am passionate about using technology to create impactful solutions.
                 Eager to contribute to impactful, forward-thinking teams, I am
                 seeking opportunities that challenge my capabilities and drive
                 me to deliver meaningful results.

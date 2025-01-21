@@ -5,7 +5,7 @@
     max-width: 100%;
     margin: 0 auto;
    
-    border-bottom:1px solid #fb0dbf32;
+    
     border-top:1px solid #fb0dbf5f;
 }
 
@@ -138,11 +138,11 @@
     }
 
     .howdy {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
     }
 
     .howdyText {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 
     .tabs {
@@ -162,13 +162,12 @@
     }
 
     .howdy {
-        font-size: 2rem;
-    }
-
-    .howdyText {
-        font-size: 1.2rem;
-    }
-
+        font-size: 80px; /* Adjusted for smaller screens */
+      }
+    
+      .howdyText {
+        font-size: 50px;
+      }
     .tabButton {
         font-size: 0.9rem;
         padding: 0.5rem;

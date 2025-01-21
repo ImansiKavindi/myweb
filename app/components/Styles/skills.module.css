@@ -5,6 +5,7 @@
   align-items: center;
   color: #ffffff;
   padding: 2rem; /* Add padding for breathing space */
+  border-top:1px solid #fb0dbf32;
 }
 
 .skillsContainer {
@@ -120,7 +121,7 @@
   }
 
   .icons {
-    gap: 0.5rem; /* Tighter spacing for icons */
+    gap: 0.4rem; /* Tighter spacing for icons */
   }
 
   .rightSide img {
