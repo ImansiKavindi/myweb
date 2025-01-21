@@ -1,3 +1,5 @@
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -45,7 +47,8 @@ img {
 }
 
 section {
-  overflow-x: hidden; /* Prevent horizontal scrolling for individual sections */
+  overflow-x: hidden; 
+  overflow-y: hidden;/* Prevent horizontal scrolling for individual sections */
 }
 
 /* Utility classes for debugging */

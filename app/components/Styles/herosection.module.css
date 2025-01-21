@@ -5,8 +5,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 10px;
-  padding: 10px;
+  gap:80px;
+  padding-right: 50px;
 }
 
 
@@ -116,13 +116,14 @@
 
 .imageContainer {
   position: relative;
-  top: 50px;
+  top: 40px;
   width: 360px;
   height: 320px;
   margin: 0 auto;
   border-radius: 50%;
   overflow: hidden;
   display: flex;
+  margin-left: 170px;
   justify-content: center;
   align-items: center;
 }

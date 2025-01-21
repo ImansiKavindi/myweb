@@ -56,7 +56,7 @@ const HeroSection = () => {
 
             {/* Description */}
             <p>
-              I am a proactive and detail-oriented undergraduate specializing in
+              I am a proactive and detail-oriented undergraduate specializing<br/> in
               Information Technology.
             </p>
           </div>

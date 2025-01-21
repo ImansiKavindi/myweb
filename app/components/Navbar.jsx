@@ -20,7 +20,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between px-4 py-4">
         {/* Logo */}
         <Link href={"/"} className="text-2xl font-bold text-white">
-          Logo
+          Portfolio
         </Link>
 
         {/* Mobile Menu Toggle */}

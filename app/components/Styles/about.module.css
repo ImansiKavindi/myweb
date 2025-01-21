@@ -31,7 +31,7 @@
 }
 
 .howdy {
-    font-size: 180px;
+    font-size: clamp(80px, 10vw, 150px);
     font-family: cursive;
     background: linear-gradient(90deg, #ff6ec7, #6eafff);
     -webkit-background-clip: text;
@@ -41,7 +41,7 @@
 }
 
 .howdyText {
-    font-size: 80px;
+    font-size: clamp(40px, 5vw, 80px);
     color: #ffffff;
     font-family: cursive;
     margin-bottom: 1rem;
