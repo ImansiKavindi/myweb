@@ -65,7 +65,9 @@ const EmailSection = () => {
             <Image src="/images/link.png" alt="LinkedIn Icon" width={60} height={60} />
           </Link>
         </div>
+        
       </div>
+ 
 
       {/* Right Section */}
       <div>

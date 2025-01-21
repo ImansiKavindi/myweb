@@ -3,6 +3,7 @@ import React, { useState, useTransition } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image"; // Assuming you're using Next.js
 import styles from "../components/Styles/about.module.css"; // Import CSS module
+import "../globals.css";
 
 const AboutSection = () => {
   const [tab, setTab] = useState(null); // No tab is selected initially
@@ -35,8 +36,14 @@ const AboutSection = () => {
 
   return (
     <section id="about" className={styles.section}>
+   
+   
+
       <div className={styles.about}>
+    
+        
         <div className={styles.contentContainer}>
+        
           <div className={styles.aboutText}>
             <h1>
               <span className={styles.howdy}>A</span>
@@ -62,6 +69,7 @@ const AboutSection = () => {
                 seeking opportunities that challenge my capabilities and drive
                 me to deliver meaningful results.
               </p>
+              
             </div>
 
             {/* Tabs */}

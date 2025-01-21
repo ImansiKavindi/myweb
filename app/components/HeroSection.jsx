@@ -14,11 +14,13 @@ import styles from "../components/Styles/herosection.module.css"; // Import the 
 
 const HeroSection = () => {
   return (
+
     <>
       
 
       <div className={styles.heroSection}>
         {/* Content Container */}
+       
         <div className={styles.contentContainer}>
           <div className={styles.heroText}>
             <h1>
@@ -73,6 +75,8 @@ const HeroSection = () => {
           </div>
         </div>
 
+        
+
         {/* Profile Image and Animated Dashed Frame */}
         <div className={styles.imageContainer}>
           <Image
@@ -102,7 +106,10 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+
+      
     </>
+    
   );
 };
 
