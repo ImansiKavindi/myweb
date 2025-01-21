@@ -6,7 +6,7 @@ const NavLink = ({ href, title, className = "", onClick }) => {
     <Link
       href={href}
       onClick={onClick}
-      className={`text-lg font-medium text-white hover:text-gray-300 transition-colors ${className}`}
+      className={`text-lg font-medium text-white transition-colors hover:text-transparent hover:bg-gradient-to-r hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 hover:bg-clip-text ${className}`}
     >
       {title}
     </Link>
