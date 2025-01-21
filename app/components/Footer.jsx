@@ -1,8 +1,24 @@
 "use client"; // Ensure this component runs on the client-side
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Footer = () => {
+  // State to detect window size for responsiveness
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Set mobile breakpoint at 768px
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   // Inline CSS styles for the footer
   const styles = {
     smallFooter: {
@@ -24,17 +40,17 @@ const Footer = () => {
     },
     scrollToTopButton: {
       position: 'absolute', // Position button inside the footer
-      bottom: '0px', // Stick it at the bottom of the footer
-      left: '95%',
-      transform: 'translateX(50%)', // Center button horizontally
+      bottom: isMobile ? '0px' : '1px', // Adjust for mobile and desktop
+      right: isMobile ? '10px' : '20px', // Adjust position for mobile and desktop
       color: '#fff',
       border: 'none',
       borderRadius: '30%',
-      padding: '4px 10px',
-      fontSize: '18px',
+      padding: isMobile ? '4px 8px' : '4px 10px',// Adjust padding for mobile and desktop
+      fontSize: isMobile ? '14px' : '18px', // Adjust font size for mobile and desktop
       cursor: 'pointer',
       boxShadow: '0 0 4px #ff00ff',
-      // Ensures the button stays inside the footer
+      zIndex: 10, // Ensure the button stays on top
+      
     },
   };
 
