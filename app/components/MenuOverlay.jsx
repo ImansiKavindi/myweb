@@ -1,10 +1,14 @@
+"use client";
+import React from "react";
+import NavLink from "./NavLink";
+
 const MenuOverlay = ({ links, onClose }) => {
   return (
-    <div className="absolute top-0 left-0 w-full h-screen bg-[#121212] flex flex-col items-center justify-center">
+    <div className="fixed inset-0 bg-[#121212] flex flex-col items-center justify-center z-50">
       <ul className="space-y-6">
         {links.map((link, index) => (
-          <li key={index} onClick={onClose}>
-            <NavLink href={link.path} title={link.title} />
+          <li key={index}>
+            <NavLink href={link.path} title={link.title} onClick={onClose} />
           </li>
         ))}
       </ul>

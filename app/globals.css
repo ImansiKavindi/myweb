@@ -18,13 +18,13 @@ body {
   background: var(--background);
   color: var(--foreground);
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 html, body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
-  
 }
 
 * {
@@ -32,7 +32,23 @@ html, body, #root {
   padding: 0;
   box-sizing: border-box;
 }
-/* global.css or media.css */
 
+img {
+  max-width: 100%; /* Ensure images are responsive */
+  height: auto; /* Maintain aspect ratio */
+}
 
+.container {
+  max-width: 100%; /* Avoid overflowing beyond the viewport */
+  padding-left: 16px; /* Consistent padding */
+  padding-right: 16px;
+}
 
+section {
+  overflow-x: hidden; /* Prevent horizontal scrolling for individual sections */
+}
+
+/* Utility classes for debugging */
+.border-red {
+  border: 1px solid red; /* Use this for debugging layout issues */
+}
