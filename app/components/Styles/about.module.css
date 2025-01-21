@@ -191,12 +191,12 @@
 /* Very small screens (e.g., old phones) */
 @media (max-width: 480px) {
     .howdy {
-        font-size: 1.5rem;
-    }
-
-    .howdyText {
-        font-size: 1rem;
-    }
+        font-size: 80px; /* Adjusted for smaller screens */
+      }
+    
+      .howdyText {
+        font-size: 50px;
+      }
 
     .tabButton {
         font-size: 0.8rem;

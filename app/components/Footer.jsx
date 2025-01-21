@@ -23,20 +23,19 @@ const Footer = () => {
       color: '#007bff',
     },
     scrollToTopButton: {
-      position: 'fixed',
-      bottom: '20px',
-      right: '20px',
-      
+      position: 'absolute', // Position button inside the footer
+      bottom: '0px', // Stick it at the bottom of the footer
+      left: '95%',
+      transform: 'translateX(50%)', // Center button horizontally
       color: '#fff',
       border: 'none',
       borderRadius: '30%',
-      padding: '10px 15px',
+      padding: '4px 10px',
       fontSize: '18px',
       cursor: 'pointer',
-      boxShadow: '0 0 10px #ff00ff',
-      // Make sure the button stays on top
+      boxShadow: '0 0 4px #ff00ff',
+      // Ensures the button stays inside the footer
     },
-    
   };
 
   // Scroll to top function
@@ -49,19 +48,16 @@ const Footer = () => {
 
   return (
     <footer style={styles.smallFooter}>
-     
       <div style={styles.footerContent}>
         <p>
           Copyright &copy; 2024 by <span style={styles.brand}>@EmnC❤️</span> | All Rights Reserved.
         </p>
-        
       </div>
-      {/* Scroll to Top Button */}
+
+      {/* Scroll to Top Button inside the footer */}
       <button
         style={styles.scrollToTopButton}
         onClick={scrollToTop}
-        onMouseOver={(e) => (e.target)}
-        onMouseOut={(e) => (e.target)}
       >
         ↑
       </button>

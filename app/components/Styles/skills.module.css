@@ -45,7 +45,7 @@
 .icons {
   display: flex;
   gap: 1rem;
-  flex-wrap: wrap; /* Wrap icons for smaller screens */
+  /* Wrap icons for smaller screens */
 }
 
 .howdyText {
@@ -100,6 +100,10 @@
   .category h2 {
     font-size: 1.6rem; /* Adjusted for readability */
   }
+
+  .icons {
+    gap: 0.2rem; /* Tighter spacing for icons */
+  }
 }
 
 /* Mobile screens (up to 480px) */
@@ -121,7 +125,7 @@
   }
 
   .icons {
-    gap: 0.4rem; /* Tighter spacing for icons */
+    gap: 0.5rem; /* Tighter spacing for icons */
   }
 
   .rightSide img {
