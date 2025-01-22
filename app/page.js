@@ -24,7 +24,7 @@ export default function Home() {
         className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 md:px-12 py-6 sm:py-8 md:py-12"
       >
         <HeroSection />
-        <Bg /> 
+        <Bg/> 
         
       </section>
 

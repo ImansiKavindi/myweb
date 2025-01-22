@@ -3,52 +3,74 @@
 import React from 'react';
 
 const Bg = () => {
+  const [stars, setStars] = React.useState([]);
+
+  React.useEffect(() => {
+    const generatedStars = [...Array(50)].map(() => ({
+      top: Math.random() * 100,
+      left: Math.random() * 100,
+      animationDuration: Math.random() * 5 + 3,
+      animationDelay: Math.random() * 5,
+    }));
+    setStars(generatedStars);
+  }, []);
+
   return (
     <div className="starry-background">
-      {[...Array(20)].map((_, i) => (
+      {/* Stars */}
+      {stars.map((star, i) => (
         <div
           key={i}
-          className="star"
+          className={`star ${i % 2 === 0 ? 'big-star' : 'small-star'}`}
           style={{
-            top: `${Math.random() * 100}%`,
-            left: `${Math.random() * 100}%`,
-            animationDuration: `${Math.random() * 3 + 2}s`, // Randomize duration
-            animationDelay: `${Math.random() * 2}s`, // Randomize delay
+            top: `${star.top}%`,
+            left: `${star.left}%`,
+            animationDuration: `${star.animationDuration}s`,
+            animationDelay: `${star.animationDelay}s`,
           }}
         ></div>
       ))}
 
-      {/* Internal CSS */}
       <style jsx>{`
         .starry-background {
-          position: fixed;  /* Ensure stars stay fixed in the background */
+          position: fixed;
           top: 0;
           left: 0;
           width: 100%;
           height: 100%;
-          pointer-events: none;  /* Let clicks pass through */
-          z-index: -1;  /* Ensure it's behind the content */
+          z-index: -1;
+          pointer-events: none;
+          background-color: black;
         }
 
         .star {
           position: absolute;
+          border-radius: 50%;
+          background-color: white;
+          opacity: 0;
+          animation: twinkle infinite;
+        }
+
+        .big-star {
+          width: 5px;
+          height: 5px;
+        }
+
+        .small-star {
           width: 3px;
           height: 3px;
-          background-color: white;
-          border-radius: 50%;
-          opacity: 0.5;
-          animation: twinkle infinite;
         }
 
         @keyframes twinkle {
           0% {
-            opacity: 0.4;
+            opacity: 0;
           }
           50% {
             opacity: 1;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
           }
           100% {
-            opacity: 0.5;
+            opacity: 0;
           }
         }
       `}</style>
