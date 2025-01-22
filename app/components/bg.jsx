@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-const Bg = () => {
+const bg = () => {
   const [stars, setStars] = React.useState([]);
 
   React.useEffect(() => {
@@ -78,4 +78,4 @@ const Bg = () => {
   );
 };
 
-export default Bg;
+export default bg;

@@ -6,7 +6,7 @@ import Skills from "./components/Skills";
 import ProjectSection from "./components/ProjectSection";
 import GetInTouch from "./components/contact";
 import Footer from "./components/Footer";
-import Bg from "./components/Bg";
+import bg from "./components/bg";
 
 import "./globals.css";
 
@@ -24,7 +24,7 @@ export default function Home() {
         className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 md:px-12 py-6 sm:py-8 md:py-12"
       >
         <HeroSection />
-        <Bg/> 
+        <bg/> 
         
       </section>
 
