@@ -2,17 +2,32 @@
 
 import React from 'react';
 
-const bg = () => {
+const Bg = () => {
   const [stars, setStars] = React.useState([]);
 
   React.useEffect(() => {
-    const generatedStars = [...Array(50)].map(() => ({
-      top: Math.random() * 100,
-      left: Math.random() * 100,
-      animationDuration: Math.random() * 5 + 3,
-      animationDelay: Math.random() * 5,
-    }));
-    setStars(generatedStars);
+    const generateStars = () => {
+      const isMobile = window.matchMedia('(max-width: 768px)').matches; // Adjust breakpoint as needed
+      const numberOfStars = isMobile ? 20 : 50; // Fewer stars on mobile
+      const generatedStars = [...Array(numberOfStars)].map(() => ({
+        top: Math.random() * 100,
+        left: Math.random() * 100,
+        animationDuration: Math.random() * 5 + 3,
+        animationDelay: Math.random() * 5,
+      }));
+      setStars(generatedStars);
+    };
+
+    // Generate stars initially
+    generateStars();
+
+    // Add event listener for screen resizing
+    const resizeListener = () => generateStars();
+    window.addEventListener('resize', resizeListener);
+
+    return () => {
+      window.removeEventListener('resize', resizeListener);
+    };
   }, []);
 
   return (
@@ -78,4 +93,4 @@ const bg = () => {
   );
 };
 
-export default bg;
+export default Bg;
