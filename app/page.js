@@ -6,7 +6,7 @@ import Skills from "./components/Skills";
 import ProjectSection from "./components/ProjectSection";
 import GetInTouch from "./components/contact";
 import Footer from "./components/Footer";
-import bg from "./components/bg";
+import Bg from "./components/bg"; // Bg is imported correctly
 
 import "./globals.css";
 
@@ -17,6 +17,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
 
+      {/* Add Bg Component as the first item */}
+      <Bg /> {/* This will make Bg component render the background */}
+
       <Navbar />
 
       <section
@@ -24,8 +27,6 @@ export default function Home() {
         className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 md:px-12 py-6 sm:py-8 md:py-12"
       >
         <HeroSection />
-        <bg/> 
-        
       </section>
 
       <section
