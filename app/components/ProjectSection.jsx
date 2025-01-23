@@ -17,14 +17,7 @@ const ProjectSection = () => {
       image: "/images/5.png",
       github: "https://github.com/username/ecommerce-app",
     },
-    {
-      title: "Tractor Parts Distribution System",
-      description: "A system designed to optimize the import, inventory, and distribution processes for tractor parts, ensuring efficient order management and seamless operations for AGS Agro Asia (PVT) Ltd.",
-      technologies: ["MongoDB", "Express.js", "React","Node.js"],
-      video: null, // No video, uses poster
-      image: "/images/mern.jpg",
-      github: "https://github.com/ImansiKavindi/Order-Management-System",
-    },
+
     {
       title: "Online Shopping Store",
       description: " An e-commerce platform providing users with a seamless online shopping experience, including product browsing, order placement, and account management features..",
@@ -33,7 +26,16 @@ const ProjectSection = () => {
       image: "/images/shop.png",
       github: "https://github.com/ImansiKavindi/Online-Shopping-Store",
     },
-    
+
+    {
+      title: "Tractor Parts Distribution System",
+      description: "A system designed to optimize the import, inventory, and distribution processes for tractor parts, ensuring efficient order management and seamless operations for AGS Agro Asia (PVT) Ltd.",
+      technologies: ["MongoDB", "Express.js", "React","Node.js"],
+      video: null, // No video, uses poster
+      image: "/images/mern.jpg",
+      github: "https://github.com/ImansiKavindi/Order-Management-System",
+    },
+   
 
     {
         title: "School Management System",

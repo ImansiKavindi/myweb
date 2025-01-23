@@ -8,7 +8,7 @@ const Bg = () => {
   React.useEffect(() => {
     const generateStars = () => {
       const isMobile = window.matchMedia('(max-width: 768px)').matches; // Adjust breakpoint as needed
-      const numberOfStars = isMobile ? 15: 35; // Fewer stars on mobile
+      const numberOfStars = isMobile ? 15: 40; // Fewer stars on mobile
       const generatedStars = [...Array(numberOfStars)].map(() => ({
         top: Math.random() * 100,
         left: Math.random() * 100,
@@ -67,7 +67,7 @@ const Bg = () => {
         }
 
         .big-star {
-          width: 5px;
+          width: 4px;
           height: 4px;
         }
 
