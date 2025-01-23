@@ -24,9 +24,9 @@ const Navbar = () => {
         
         {/* Logo */}
         <Link href={"/"} className="text-2xl font-bold text-white">
-           <span className="text-white">Port</span>
+           <span className="text-white">Em</span>
   <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">
-    folio
+    nC
   </span>
         </Link>
 
