@@ -8,6 +8,15 @@ const ProjectSection = () => {
   const [activeModal, setActiveModal] = useState(null);
 
   const projects = [
+
+    {
+      title: "Bliss - Calming App",
+      description: "A relaxation app focused on enhancing mental well-being through features like soothing sounds, guided meditations, and positive affirmations to help users reduce stress and improve focus.",
+      technologies: ["Kotlin"],
+      video: "/images/Bliss.mp4",
+      image: "/images/5.png",
+      github: "https://github.com/username/ecommerce-app",
+    },
     {
       title: "Tractor Parts Distribution System",
       description: "A system designed to optimize the import, inventory, and distribution processes for tractor parts, ensuring efficient order management and seamless operations for AGS Agro Asia (PVT) Ltd.",
@@ -24,14 +33,7 @@ const ProjectSection = () => {
       image: "/images/shop.png",
       github: "https://github.com/ImansiKavindi/Online-Shopping-Store",
     },
-    {
-      title: "Bliss - Calming App",
-      description: "A relaxation app focused on enhancing mental well-being through features like soothing sounds, guided meditations, and positive affirmations to help users reduce stress and improve focus.",
-      technologies: ["Kotlin"],
-      video: "/images/Bliss.mp4",
-      image: "/images/5.png",
-      github: "https://github.com/username/ecommerce-app",
-    },
+    
 
     {
         title: "School Management System",
