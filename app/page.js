@@ -1,3 +1,5 @@
+"use client";
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
@@ -6,23 +8,34 @@ import Skills from "./components/Skills";
 import ProjectSection from "./components/ProjectSection";
 import GetInTouch from "./components/contact";
 import Footer from "./components/Footer";
-// Bg is imported correctly
-import ParticlesContainer from './components/ParticlesContainer';
+import Bg from "./components/bg"; // Bg for mobile
+import ParticlesContainer from "./components/ParticlesContainer"; // Particles for desktop
 
 import "./globals.css";
 
 export default function Home() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Function to check screen width
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth <= 768); // Adjust breakpoint as needed
+    };
+
+    checkScreenSize(); // Initial check
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
   return (
     <div className="overflow-x-hidden relative">
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
 
-      {/* Particles background */}
-      <ParticlesContainer />
-
-      {/* Bg Component as the first item */}
-      {/* This will make Bg component render the background */}
+      {/* Conditional Rendering */}
+      {isMobile ? <Bg /> : <ParticlesContainer />}
 
       <Navbar />
 
