@@ -74,7 +74,7 @@ export default function ParticlesContainer() {
               enable: true, // Enable density control
               area: 500, // Density area
             },
-            value: 80, // Number of particles
+            value: 25, // Number of particles
           },
           opacity: {
             value: 0.5, // Opacity of particles
