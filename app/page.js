@@ -7,18 +7,22 @@ import ProjectSection from "./components/ProjectSection";
 import GetInTouch from "./components/contact";
 import Footer from "./components/Footer";
 import Bg from "./components/bg"; // Bg is imported correctly
+import ParticlesContainer from './components/ParticlesContainer';
 
 import "./globals.css";
 
 export default function Home() {
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden relative">
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
 
-      {/* Add Bg Component as the first item */}
-      <Bg /> {/* This will make Bg component render the background */}
+      {/* Particles background */}
+      <ParticlesContainer />
+
+      {/* Bg Component as the first item */}
+      {/* This will make Bg component render the background */}
 
       <Navbar />
 
