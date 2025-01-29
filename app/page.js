@@ -7,7 +7,7 @@ import ProjectSection from "./components/ProjectSection";
 import GetInTouch from "./components/contact";
 import Footer from "./components/Footer";
 import Bg from "./components/bg"; // Bg is imported correctly
-
+import ParticlesContainer from './components/ParticlesContainer';
 
 import "./globals.css";
 
@@ -19,7 +19,7 @@ export default function Home() {
       </Head>
 
       {/* Particles background */}
-      <Bg/>
+      <ParticlesContainer />
 
       {/* Bg Component as the first item */}
       {/* This will make Bg component render the background */}
