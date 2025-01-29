@@ -6,7 +6,7 @@ import Skills from "./components/Skills";
 import ProjectSection from "./components/ProjectSection";
 import GetInTouch from "./components/contact";
 import Footer from "./components/Footer";
-import Bg from "./components/bg"; // Bg is imported correctly
+// Bg is imported correctly
 import ParticlesContainer from './components/ParticlesContainer';
 
 import "./globals.css";
