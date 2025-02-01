@@ -54,7 +54,7 @@ const ProjectSection = () => {
     },
 
     {
-      title: "Tic Tac Toe",
+      title: "Tic Tac Toe - Game",
       description: "This project demonstrates the core principles of game logic and user interaction through a simple Tic Tac Toe game,providing a fun and engaging experience.",
       technologies: ["HTML", "CSS", "JS" ],
       image: "/images/game.png",
@@ -62,7 +62,7 @@ const ProjectSection = () => {
       github: "https://github.com/ImansiKavindi/Tic-Tac-Toe-game",
     },
     {
-      title: "EmoCare",
+      title: "EmoCare - Simple Chatbot",
       description: "EmoCare is a chatbot designed to provide emotional support through comforting, personalized responses. It helps users navigate their emotions with empathy and understanding.",
       technologies: ["Python" ],
       image: "/images/chatbot.png",
