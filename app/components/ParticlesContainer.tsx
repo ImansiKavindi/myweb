@@ -66,7 +66,7 @@ export default function ParticlesContainer() {
               default: 'bounce', // Particles will bounce when they reach the edge
             },
             random: false, // No random movement
-            speed: 2, // Particle speed
+            speed: 1, // Particle speed
             straight: false, // Particles don't move in a straight line
           },
           number: {
