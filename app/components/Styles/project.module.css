@@ -197,8 +197,19 @@
   }
 
   .projectContainer {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Snap cards into place */
+    gap: 1rem;
+    padding: 10px 0; /* Add some padding for better spacing */
+  }
+
+  .projectCard {
+    flex: 0 0 auto; /* Prevent cards from shrinking */
+    width: 80%; /* Adjust card width for mobile */
+    max-width: 350px; /* Limit maximum width */
+    scroll-snap-align: center; /* Align cards in the center */
+    margin: 0 auto; /* Center cards */
   }
 
   .githubButton {

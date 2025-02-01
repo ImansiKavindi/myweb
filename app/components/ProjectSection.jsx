@@ -2,13 +2,12 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "../components/Styles/project.module.css";
-import { FaGithub, FaLinkedin } from "react-icons/fa"; 
+import { FaGithub } from "react-icons/fa";
 
 const ProjectSection = () => {
   const [activeModal, setActiveModal] = useState(null);
 
   const projects = [
-
     {
       title: "Bliss - Calming App",
       description: "A relaxation app focused on enhancing mental well-being through features like soothing sounds, guided meditations, and positive affirmations to help users reduce stress and improve focus.",
@@ -17,79 +16,66 @@ const ProjectSection = () => {
       image: "/images/5.png",
       github: "https://github.com/username/ecommerce-app",
     },
-
     {
       title: "Online Shopping Store",
-      description: " An e-commerce platform providing users with a seamless online shopping experience, including product browsing, order placement, and account management features..",
-      technologies: ["HTML","CSS","PHP","JS","Mysql"],
+      description: "An e-commerce platform providing users with a seamless online shopping experience, including product browsing, order placement, and account management features.",
+      technologies: ["HTML", "CSS", "PHP", "JS", "MySQL"],
       video: "/images/valentino.mp4",
       image: "/images/shop.png",
       github: "https://github.com/ImansiKavindi/Online-Shopping-Store",
     },
-
     {
       title: "Tractor Parts Distribution System",
-      description: "A system designed to optimize the import, inventory, and distribution processes for tractor parts, ensuring efficient order management and seamless operations for AGS Agro Asia (PVT) Ltd.",
-      technologies: ["MongoDB", "Express.js", "React","Node.js"],
-      video: null, // No video, uses poster
+      description: "A system designed to optimize the import, inventory, and distribution processes for tractor parts, ensuring efficient order management and seamless operations.",
+      technologies: ["MongoDB", "Express.js", "React", "Node.js"],
       image: "/images/mern.jpg",
       github: "https://github.com/ImansiKavindi/Order-Management-System",
     },
-   
+    {
+      title: "School Management System",
+      description: "Developed a comprehensive system to manage school operations, including maintaining student records, managing classes, and performing search and data handling tasks with ease.",
+      technologies: ["Java", "MySQL", "JS"],
+      image: "/images/1.png",
+      github: "https://github.com/ImansiKavindi/Student-Management-System",
+    },
+    {
+      title: "Portfolio",
+      description: "A personal portfolio showcasing a collection of projects, skills, and achievements.",
+      technologies: ["TypeScript", "Next.js", "JS", "CSS"],
+      image: "/images/porfolio.png",
+      github: "https://github.com/ImansiKavindi/myweb",
+    },
+    {
+      title: "Task Management App",
+      description: "A mobile application designed to help users organize tasks efficiently, featuring the ability to create, update, and delete tasks.",
+      technologies: ["Kotlin"],
+      image: "/images/ticked.jpg",
+      github: "https://github.com/ImansiKavindi/Task-Management-App",
+    },
 
     {
-        title: "School Management System",
-        description: "Developed a comprehensive system to manage school operations, including maintaining student records, managing classes, and performing search and data handling tasks with ease.",
-        technologies: ["Java", "MySQL", "JS"],
-        image: "/images/1.png", // Thumbnail image
-        github: "https://github.com/ImansiKavindi/Student-Management-System",
-       
-      },
-
-      {
-        title: "Portfolio",
-        description: "A personal portfolio showcasing a collection of projects, skills, and achievements. Designed to highlight expertise and creativity, it provides an engaging and professional platform for visitors to explore and learn more.",
-        technologies: ["TypeScript", "Next.js", "JS","CSS"],
-        image: "/images/porfolio.png", // Thumbnail image
-        github: "https://github.com/ImansiKavindi/portfolio",
-        
-      },
-
-
-      {
-        title: "Task management application",
-        description: "A mobile application designed to help users organize tasks efficiently, featuring the ability to create, update, and delete tasks, along with notifications to keep users on track.",
-        technologies: ["Kotlin"],
-        image: "/images/ticked.jpg", // Thumbnail image
-        github: "https://github.com/ImansiKavindi/Task-Management-App",
-        
-      },
-
-
-
-
-
-
-
-
+      title: "Tic Tac Toe",
+      description: "This project demonstrates the core principles of game logic and user interaction through a simple Tic Tac Toe game,providing a fun and engaging experience.",
+      technologies: ["HTML", "CSS", "JS" ],
+      image: "/images/game.png",
+      video:"/images/game.mp4",
+      github: "https://github.com/ImansiKavindi/Tic-Tac-Toe-game",
+    },
+    {
+      title: "EmoCare",
+      description: "EmoCare is a chatbot designed to provide emotional support through comforting, personalized responses. It helps users navigate their emotions with empathy and understanding.",
+      technologies: ["Python" ],
+      image: "/images/chatbot.png",
+      github: "https://github.com/ImansiKavindi/Simple-Chatbot",
+    },
   ];
 
   return (
     <section id="projects" className={styles.projectsSection}>
-       <div
-  className="bg-[radial-gradient(circle,_rgba(128,0,128,0.7)_0%,_rgba(0,0,0,0)_60%)] 
-    rounded-full 
-    h-[500px] w-[700px] 
-    z-0 blur-lg 
-    absolute top-[2000px] right-[300px]"
->
-</div>
-
       <h1>
         <span className={styles.howdy}>P</span>
         <span className={styles.howdyText}>rojects</span>
       </h1>
-
       <div className={styles.projectContainer}>
         {projects.map((project, index) => (
           <motion.div
@@ -98,15 +84,10 @@ const ProjectSection = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.2)",
-            }}
+            whileHover={{ scale: 1.05 }}
+            onClick={() => setActiveModal(index)}
           >
-            <div
-              className={styles.cardContent}
-              onClick={() => setActiveModal(index)}
-            >
+            <div className={styles.cardContent}>
               <h2>{project.title}</h2>
               <motion.img
                 src={project.image}
@@ -114,11 +95,11 @@ const ProjectSection = () => {
                 className={styles.projectImage}
                 whileHover={{ scale: 1.1 }}
               />
+              <div className={styles.overlay}>Click to View Details</div>
             </div>
           </motion.div>
         ))}
       </div>
-
       {/* Modal Section */}
       <AnimatePresence>
         {activeModal !== null && (
@@ -142,18 +123,8 @@ const ProjectSection = () => {
               >
                 ✖
               </button>
-             
-              
-              {/* Render video or poster */}
               {projects[activeModal]?.video ? (
-                <motion.video
-                  controls
-                  autoPlay
-                  className={styles.modalVideo}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.3 }}
-                >
+                <motion.video controls autoPlay className={styles.modalVideo}>
                   <source
                     src={projects[activeModal]?.video}
                     type="video/mp4"
@@ -164,46 +135,30 @@ const ProjectSection = () => {
                   src={projects[activeModal]?.image}
                   alt={`${projects[activeModal]?.title} poster`}
                   className={styles.modalPoster}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.3 }}
                 />
               )}
-            <div className={styles.des}>
-              <p>{projects[activeModal]?.description}</p>
-              </div>
-
+              <p className={styles.description}>
+                {projects[activeModal]?.description}
+              </p>
               <div className={styles.techList}>
- 
-              {projects[activeModal]?.technologies.map((tech, techIndex) => (
-             <span key={techIndex} className={styles.techTag}>
-                {tech}
-             </span>
-                 ))}
-                 </div>
-
-
-
-
-
-
-
+                {projects[activeModal]?.technologies.map((tech, techIndex) => (
+                  <span key={techIndex} className={styles.techTag}>
+                    {tech}
+                  </span>
+                ))}
+              </div>
               <a
                 href={projects[activeModal]?.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.githubButton}
-                 >
-                     <FaGithub size={36}/>
-                 </a>
-              
-               
+              >
+                <FaGithub size={36} />
+              </a>
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
-    
-
     </section>
   );
 };
