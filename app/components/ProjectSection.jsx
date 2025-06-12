@@ -3,9 +3,13 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "../components/Styles/project.module.css";
 import { FaGithub } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const ProjectSection = () => {
   const [activeModal, setActiveModal] = useState(null);
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const projectsPerPage = 6;
 
   const projects = [
     {
@@ -68,7 +72,52 @@ const ProjectSection = () => {
       image: "/images/chatbot.png",
       github: "https://github.com/ImansiKavindi/Simple-Chatbot",
     },
+
+{
+      title: "HomeStock",
+      description: "HomeStock is a user-friendly web platform that helps you effortlessly manage your home inventory, groceries, and household items.",
+      technologies: ["MongoDB", "Express.js", "React", "Node.js"],
+      image: "/images/HomeStock.png",
+      github: "https://github.com/ImansiKavindi/HomeStock",
+    },
+
+    {
+      title: "Yummly",
+      description: " The Social Platform for Food Lovers.Yummly is a unique social media space made just for home cooks, foodies, and culinary explorers.",
+      technologies: ["Spring Boot"],
+      image: "/images/Yummly.png",
+      github: "https://github.com/ImansiKavindi/Yummly-Backend",
+    },
+
+
+
   ];
+// Calculate total pages
+  const totalPages = Math.ceil(projects.length / projectsPerPage);
+
+  // Get projects for the current page
+  const currentProjects = projects.slice(
+    currentPage * projectsPerPage,
+    (currentPage + 1) * projectsPerPage
+  );
+
+  const handlePrev = () => {
+    setCurrentPage((prev) => (prev === 0 ? totalPages - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentPage((prev) => (prev === totalPages - 1 ? 0 : prev + 1));
+  };
+
+
+
+
+
+
+
+
+
+
 
   return (
     <section id="projects" className={styles.projectsSection}>
@@ -76,17 +125,36 @@ const ProjectSection = () => {
         <span className={styles.howdy}>P</span>
         <span className={styles.howdyText}>rojects</span>
       </h1>
-      <div className={styles.projectContainer}>
-        {projects.map((project, index) => (
-          <motion.div
-            key={index}
-            className={`${styles.projectCard} glass-effect`}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
-            whileHover={{ scale: 1.05 }}
-            onClick={() => setActiveModal(index)}
-          >
+
+
+{/* Slider Container with relative position */}
+      <div style={{ position: "relative", width: "100%" }}>
+        {/* Left Arrow */}
+        <button
+          onClick={handlePrev}
+          className={`${styles.arrowButton} ${styles.leftArrow}`}
+          aria-label="Previous projects"
+        >
+          <FaChevronLeft />
+        </button>
+
+        <div className={styles.projectContainer}>
+          {currentProjects.map((project, index) => (
+            <motion.div
+              key={index + currentPage * projectsPerPage}
+              className={`${styles.projectCard} glass-effect`}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ scale: 1.05 }}
+              onClick={() => setActiveModal(index + currentPage * projectsPerPage)}
+            >
+
+
+
+
+
+      
             <div className={styles.cardContent}>
               <h2>{project.title}</h2>
               <motion.img
@@ -99,7 +167,18 @@ const ProjectSection = () => {
             </div>
           </motion.div>
         ))}
+        </div>
+        {/* Right Arrow */}
+        <button
+          onClick={handleNext }
+          className={`${styles.arrowButton} ${styles.rightArrow}`}
+          aria-label="Next projects"
+        >
+          <FaChevronRight />
+        </button>
       </div>
+      
+
       {/* Modal Section */}
       <AnimatePresence>
         {activeModal !== null && (

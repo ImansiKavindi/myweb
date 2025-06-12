@@ -1,6 +1,8 @@
 .projectsSection {
-  padding: 10px;
+  padding: 20px;
   text-align: center;
+ 
+ width:80rem;
   
 }
 
@@ -12,6 +14,9 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+  padding-left: 40px;
+   padding-right: 70px;
+  
 }
 
 .projectCard {
@@ -117,6 +122,44 @@
   animation: fadeIn 0.3s ease;
 }
 
+.arrowButton {
+  position: absolute;
+  top: 52%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 2rem;
+  color: #ff6ec7;
+  
+}
+
+.arrowButton:hover {
+  color: #ff49b7; /* Optional hover color */
+}
+
+.leftArrow {
+  left: -25;
+}
+
+.rightArrow {
+  right: 20;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -176,6 +219,7 @@
 .des p {
   padding-top: 10px;
 }
+
 
 @media screen and (max-width: 768px) {
   .projectsSection {

@@ -99,36 +99,63 @@
     background-color: #ffffff;
     padding: 10px;
 }
+/* Responsive Media Queries */
 
-/* Content Styling */
-.certItem {
-    color: rgb(252, 131, 212);
-    text-align: center;
+
+
+
+
+.certSliderWrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+
+.arrow {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 1rem;
+  color: #ffffff;
+}
+.arrow:hover {
+  color: #eb0dbf;
+}
+
+.certSlider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1rem;
+  padding: 1rem 0;
+  scrollbar-width: none;
+}
+.certSlider::-webkit-scrollbar {
+  display: none;
 }
 
 
-.certText p{
- font-size: 1rem;
+.certImage {
+  border-radius: 8px;
+}
+.certText {
+  margin-top: 0.9rem;
+  color: #f931d8;
 }
 
-.certImageWrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    margin: 1rem auto;
-    padding: 1rem;
-}
 
-.cerfy {
-    margin-top: 1rem;
-    padding: 1rem;
-    background: #1e1e1e;
-    border-radius: 12px;
-    color: #ffffff;
-    font-size: 0.9rem;
-    line-height: 1.5;
-}
+
+
+
+
+
+
+
+
+
+
 
 /* Responsive Media Queries */
 

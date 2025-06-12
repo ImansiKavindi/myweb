@@ -1,18 +1,59 @@
 "use client";
 import React, { useState, useTransition } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image"; // Assuming you're using Next.js
-import styles from "../components/Styles/about.module.css"; // Import CSS module
+import Image from "next/image";
+import styles from "../components/Styles/about.module.css";
 import "../globals.css";
 
 const AboutSection = () => {
-  const [tab, setTab] = useState(null); // No tab is selected initially
+  const [tab, setTab] = useState(null);
   const [isPending, startTransition] = useTransition();
+  const [currentCertIndex, setCurrentCertIndex] = useState(0);
+
+  const certifications = [
+    {
+      src: "/images/sliit1.jpg",
+      alt: "AI/ML Engineer - Stage 1",
+      title: "AI/ML Engineer - Stage 1",
+      org: "SLIIT Faculty of Computing",
+    },
+    {
+      src: "/images/sliit2.jpg",
+      alt: "AI/ML Engineer - Stage 2",
+      title: "AI/ML Engineer - Stage 2",
+      org: "SLIIT Faculty of Computing",
+    },
+    {
+      src: "/images/jp.jpg",
+      alt: "Java Programming",
+      title: "Java Programming",
+      org: "Great Learning",
+    },
+    {
+      src: "/images/oop.jpg",
+      alt: "OOPs in Java",
+      title: "OOPs in Java",
+      org: "Great Learning",
+    },
+  ];
 
   const handleTabChange = (id) => {
     startTransition(() => {
-      setTab((prevTab) => (prevTab === id ? null : id)); // Toggle the same tab
+      setTab((prevTab) => (prevTab === id ? null : id));
+      setCurrentCertIndex(0); // Reset index on tab change
     });
+  };
+
+  const handlePrev = () => {
+    setCurrentCertIndex((prev) =>
+      prev === 0 ? certifications.length - 1 : prev - 1
+    );
+  };
+
+  const handleNext = () => {
+    setCurrentCertIndex((prev) =>
+      prev === certifications.length - 1 ? 0 : prev + 1
+    );
   };
 
   const TabButton = ({ active, selectTab, children }) => {
@@ -36,40 +77,25 @@ const AboutSection = () => {
 
   return (
     <section id="about" className={styles.section}>
-   
-   
-
       <div className={styles.about}>
-    
-        
         <div className={styles.contentContainer}>
-        
           <div className={styles.aboutText}>
             <h1>
               <span className={styles.howdy}>A</span>
               <span className={styles.howdyText}>bout me</span>
               <br />
             </h1>
-           {/* Background Blur */}
-    
-     
+
             <div>
               <p>
-              I’m Imansi Kavindi, a second-year Information Technology student at SLIIT. 
-              With expertise in full-stack web development and Android app development
-                As a driven Information Technology undergraduate at SLIIT, I
-                specialize in full-stack web and mobile development with a
-                strong focus on crafting seamless, high-performance
-                applications.
+                I’m Imansi Kavindi, a second-year Information Technology student
+                at SLIIT. With expertise in full-stack web development and
+                Android app development...
               </p>
               <p>
-              I thrive in fast-paced, collaborative environments and enjoy tackling complex challenges.
-               As a quick learner and problem-solver, I am passionate about using technology to create impactful solutions.
-                Eager to contribute to impactful, forward-thinking teams, I am
-                seeking opportunities that challenge my capabilities and drive
-                me to deliver meaningful results.
+                I thrive in fast-paced, collaborative environments and enjoy
+                tackling complex challenges...
               </p>
-              
             </div>
 
             {/* Tabs */}
@@ -88,104 +114,53 @@ const AboutSection = () => {
               </TabButton>
             </div>
 
-            {/* Tab Content */}
+            {/* Education */}
             {tab === "education" && (
               <div className={styles.imageContainer}>
                 <Image
-                  src="/images/sliit.png" // Replace with your actual image path
+                  src="/images/sliit.png"
                   alt="SLIIT LOGO"
                   className={styles.heroImage}
                   width={150}
                   height={150}
                 />
                 <ul>
-                  <dl>BSc (Hons) Specializing in Information Technology</dl>
+                  <dl>
+                    BSc (Hons) Specializing in Information Technology
+                  </dl>
                   <li>Sri Lankan Institute of Information Technology (SLIIT)</li>
                   <li>Year 3 Semester 1</li>
                 </ul>
               </div>
             )}
 
+            {/* Certifications - One at a Time */}
             {tab === "certifications" && (
-              <div className={styles.cerfy}>
-                <ol>
-                  <li className={styles.certItem}>
-                    <div className={styles.certContent}>
-                      <div className={styles.certImageWrapper}>
-                        <Image
-                          src="/images/sliit1.jpg"
-                          alt="AI/ML Engineer - Stage 1 Certificate"
-                          className={styles.certImage}
-                          width={300}
-                          height={300}
-                        />
-                      </div>
-                      <div className={styles.certText}>
-                        <strong>AI/ML Engineer - Stage 1</strong>
-                        <p>
-                          SLIIT Faculty of Computing <br/>Centre for Open and Distance Education
-                        </p>
-                      </div>
-                    </div>
-                  </li>
+              <div className={styles.imageContainer}>
+              <div className={styles.certSliderWrapper}>
+                <button className={styles.arrow} onClick={handlePrev}>
+                  &lt;
+                </button>
 
-                  <li className={styles.certItem}>
-                    <div className={styles.certContent}>
-                      <div className={styles.certImageWrapper}>
-                        <Image
-                          src="/images/sliit2.jpg"
-                          alt="AI/ML Engineer - Stage 2 Certificate"
-                          className={styles.certImage}
-                          width={300}
-                          height={300}
-                        />
-                      </div>
-                      <div className={styles.certText}>
-                        <strong>AI/ML Engineer - Stage 2</strong>
-                        <p>
-                          SLIIT Faculty of Computing <br/> Centre for Open and Distance Education
-                        </p>
-                      </div>
-                    </div>
-                  </li>
+                <div className={styles.certCard}>
+                  <Image
+                    src={certifications[currentCertIndex].src}
+                    alt={certifications[currentCertIndex].alt}
+                    className={styles.certImage}
+                    width={300}
+                    height={300}
+                  />
+                  <div className={styles.certText}>
+                    <strong>{certifications[currentCertIndex].title}</strong>
+                    <p>{certifications[currentCertIndex].org}</p>
+                  </div>
+                </div>
 
-                  <li className={styles.certItem}>
-                    <div className={styles.certContent}>
-                      <div className={styles.certImageWrapper}>
-                        <Image
-                          src="/images/jp.jpg"
-                          alt="Java Programming Certificate"
-                          className={styles.certImage}
-                          width={300}
-                          height={300}
-                        />
-                      </div>
-                      <div className={styles.certText}>
-                        <strong>Java Programming</strong>
-                        <p>Great Learning</p>
-                      </div>
-                    </div>
-                  </li>
-
-                  <li className={styles.certItem}>
-                    <div className={styles.certContent}>
-                      <div className={styles.certImageWrapper}>
-                        <Image
-                          src="/images/oop.jpg"
-                          alt="OOPs in Java Certificate"
-                          className={styles.certImage}
-                          width={300}
-                          height={300}
-                        />
-                      </div>
-                      <div className={styles.certText}>
-                        <strong>OOPs in Java</strong>
-                        <p>Great Learning</p>
-                      </div>
-                    </div>
-                  </li>
-                </ol>
+                <button className={styles.arrow} onClick={handleNext}>
+                  &gt;
+                </button>
               </div>
+               </div>
             )}
           </div>
         </div>
