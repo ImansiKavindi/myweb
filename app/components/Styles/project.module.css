@@ -144,7 +144,7 @@
 }
 
 .rightArrow {
-  right: 20;
+  right: 20px;
 }
 
 
@@ -227,6 +227,10 @@
     margin-top: 100px;
   }
 
+  .arrowButton {
+    display: none;
+  }
+
   .howdy {
     font-size: 80px; /* Adjusted for smaller screens */
   }
@@ -288,5 +292,8 @@
   .githubButton {
     width: 40px;
     height: 40px;
+  }
+  .arrowButton {
+    display: none;
   }
 }
