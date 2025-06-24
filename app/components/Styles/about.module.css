@@ -26,6 +26,7 @@
 
 .aboutText p {
     font-size: 1.3rem;
+    text-align: left;
     line-height: 1.5;
     color: #ffffff;
     margin-bottom: 1rem;
