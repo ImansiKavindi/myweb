@@ -88,15 +88,15 @@ const AboutSection = () => {
 
             <div>
               <p>
-                I’m Imansi — a 22-year-old girl from the coastal city of Galle, now living closer to the heart of Sri Lanka in Kadawatha. My journey began not just in classrooms, but on volleyball courts, dance stages, and student leadership boards. School wasn’t just about books for me; it was about showing up, stepping up, and discovering who I was meant to be.
+                I’m Imansi a 22-year-old girl from the coastal city of Galle, now living closer to the heart of Sri Lanka in Kadawatha. My journey began not just in classrooms, but on volleyball courts, dance stages, and student leadership boards. School wasn’t just about books for me; it was about showing up, stepping up, and discovering who I was meant to be.
               </p>
               <p>
                 That same energy now drives me as a third-year undergraduate specializing in Information Technology at SLIIT. I’ve always been curious about how things work — not just machines, but systems, ideas, and people.  
-                I’ve found a passion in web and mobile development, project coordination, and building digital experiences that matter. Whether I’m collaborating with a team, tackling a challenge, or organizing events with AIESEC, I bring my full self — eager to learn, contribute, and grow.
+                I’ve found a passion in web and mobile development, project coordination, and building digital experiences that matter. Whether I’m collaborating with a team, tackling a challenge, or organizing events with AIESEC, I bring my full self eager to learn, contribute, and grow.
               </p>
               
               <p>
-                Right now, I’m looking for an internship that feels like the next chapter — where I can gain real-world experience, be part of something exciting, and keep becoming the best version of myself. And when I’m not deep into code or planning something new, I’m probably dreaming up ideas, learning something unexpected, or just appreciating the little things that make this journey worth it.
+                Right now, I’m looking for an internship that feels like the next chapter where I can gain real-world experience, be part of something exciting, and keep becoming the best version of myself. And when I’m not deep into code or planning something new, I’m probably dreaming up ideas, learning something unexpected, or just appreciating the little things that make this journey worth it.
               </p>
             </div>
 
