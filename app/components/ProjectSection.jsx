@@ -42,13 +42,15 @@ const ProjectSection = () => {
       image: "/images/1.png",
       github: "https://github.com/ImansiKavindi/Student-Management-System",
     },
-    {
-      title: "Portfolio",
-      description: "A personal portfolio showcasing a collection of projects, skills, and achievements.",
-      technologies: ["TypeScript", "Next.js", "JS", "CSS"],
-      image: "/images/porfolio.png",
-      github: "https://github.com/ImansiKavindi/myweb",
+   
+     {
+      title: "Yummly",
+      description: " The Social Platform for Food Lovers.Yummly is a unique social media space made just for home cooks, foodies, and culinary explorers.",
+      technologies: ["Spring Boot"],
+      image: "/images/Yummly.png",
+      github: "https://github.com/ImansiKavindi/Yummly-Backend",
     },
+    
     {
       title: "Task Management App",
       description: "A mobile application designed to help users organize tasks efficiently, featuring the ability to create, update, and delete tasks.",
@@ -80,14 +82,15 @@ const ProjectSection = () => {
       image: "/images/HomeStock.png",
       github: "https://github.com/ImansiKavindi/HomeStock",
     },
-
-    {
-      title: "Yummly",
-      description: " The Social Platform for Food Lovers.Yummly is a unique social media space made just for home cooks, foodies, and culinary explorers.",
-      technologies: ["Spring Boot"],
-      image: "/images/Yummly.png",
-      github: "https://github.com/ImansiKavindi/Yummly-Backend",
+     {
+      title: "Portfolio",
+      description: "A personal portfolio showcasing a collection of projects, skills, and achievements.",
+      technologies: ["TypeScript", "Next.js", "JS", "CSS"],
+      image: "/images/porfolio.png",
+      github: "https://github.com/ImansiKavindi/myweb",
     },
+
+   
 
 
 
