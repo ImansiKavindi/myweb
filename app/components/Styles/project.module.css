@@ -2,7 +2,9 @@
   padding: 20px;
   text-align: center;
   width: 100%;
+ 
   max-width: 1200px;
+   background: transparent;
   margin: 0 auto;
 }
 
@@ -15,6 +17,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+
+ background: transparent;
   padding-left: 40px;
    padding-right: 70px;
   
@@ -123,16 +127,17 @@
   animation: fadeIn 0.3s ease;
 }
 
+
 .arrowButton {
   position: absolute;
   top: 52%;
   transform: translateY(-50%);
-  background: transparent;
+ 
   border: none;
   cursor: pointer;
-  z-index: 10;
-  font-size: 2rem;
-  color: #ff6ec7;
+  z-index: 100;
+  font-size: 22rem;
+  color: #12d52c;
   
 }
 
@@ -141,11 +146,11 @@
 }
 
 .leftArrow {
-  left: -25px;
+  left: 85px;
 }
 
 .rightArrow {
-  right: 20px;
+  right: -50px;
 }
 
 

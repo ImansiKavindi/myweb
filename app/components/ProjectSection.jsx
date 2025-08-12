@@ -2,19 +2,17 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "../components/Styles/project.module.css";
-import { FaGithub } from "react-icons/fa";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaGithub, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const ProjectSection = () => {
   const [activeModal, setActiveModal] = useState(null);
   const [currentPage, setCurrentPage] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
+  const [deviceType, setDeviceType] = useState("desktop"); // "desktop", "tablet", or "mobile"
 
   const projectsPerPage = 6;
 
   const projects = [
-    
-      {
+    {
       title: "Bliss - Calming App",
       description: "A relaxation app focused on enhancing mental well-being through features like soothing sounds, guided meditations, and positive affirmations to help users reduce stress and improve focus.",
       technologies: ["Kotlin"],
@@ -95,23 +93,28 @@ const ProjectSection = () => {
    
 
 
-
-
   ];
 
   const totalPages = Math.ceil(projects.length / projectsPerPage);
 
+  // Detect device type on mount and window resize
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
+    const updateDeviceType = () => {
+      const width = window.innerWidth;
+      if (width <= 768) setDeviceType("mobile");
+      else if (width <= 1024) setDeviceType("tablet");
+      else setDeviceType("desktop");
+    };
+    updateDeviceType();
+    window.addEventListener("resize", updateDeviceType);
+    return () => window.removeEventListener("resize", updateDeviceType);
   }, []);
 
-  const currentProjects = projects.slice(
-    currentPage * projectsPerPage,
-    (currentPage + 1) * projectsPerPage
-  );
+  // Slice projects for desktop/tablet pagination
+  const currentProjects =
+    deviceType === "desktop" || deviceType === "tablet"
+      ? projects.slice(currentPage * projectsPerPage, (currentPage + 1) * projectsPerPage)
+      : projects; // mobile shows all
 
   const handlePrev = () => {
     setCurrentPage((prev) => (prev === 0 ? totalPages - 1 : prev - 1));
@@ -121,8 +124,6 @@ const ProjectSection = () => {
     setCurrentPage((prev) => (prev === totalPages - 1 ? 0 : prev + 1));
   };
 
-  const displayedProjects = isMobile ? projects : currentProjects;
-
   return (
     <section id="projects" className={styles.projectsSection}>
       <h1>
@@ -131,32 +132,63 @@ const ProjectSection = () => {
       </h1>
 
       <div style={{ position: "relative", width: "100%" }}>
-        {!isMobile && (
-          <button
-            onClick={handlePrev}
-            className={`${styles.arrowButton} ${styles.leftArrow}`}
-            aria-label="Previous projects"
-          >
-            <FaChevronLeft />
-          </button>
+        {/* Show arrows ONLY on desktop */}
+        {deviceType === "desktop" && (
+          <>
+           <button
+      onClick={handlePrev}
+      style={{
+        position: "absolute",
+        left: -20,
+        top: "45%",
+        fontSize: "3rem",
+        color:" #ff49b7",
+        border: "none",
+        padding: "10px",
+        zIndex: 1000,
+      }}
+    >
+      &lt;
+    </button>
+    <button
+      onClick={handleNext}
+      style={{
+        position: "absolute",
+        right: 0,
+        top: "45%",
+        color:" #ff49b7",
+        fontSize: "3rem",
+        border: "none",
+        padding: "10px",
+        zIndex: 1000,
+      }}
+    >
+      &gt;
+    </button>
+          </>
         )}
 
         <div
           className={`${styles.projectContainer} ${
-            isMobile ? styles.mobileScroll : ""
+            deviceType === "mobile"
+              ? styles.mobileSwipe
+              : deviceType === "tablet"
+              ? styles.tabletScroll
+              : ""
           }`}
         >
-          {displayedProjects.map((project, index) => (
+          {currentProjects.map((project, index) => (
             <motion.div
-              key={index + (isMobile ? 0 : currentPage * projectsPerPage)}
+              key={index + (deviceType !== "mobile" ? currentPage * projectsPerPage : 0)}
               className={`${styles.projectCard} glass-effect`}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.05 }}
               onClick={() =>
-                setActiveModal(index + (isMobile ? 0 : currentPage * projectsPerPage))
+                setActiveModal(index + (deviceType !== "mobile" ? currentPage * projectsPerPage : 0))
               }
+              style={deviceType !== "desktop" ? { minWidth: "250px" } : {}}
             >
               <div className={styles.cardContent}>
                 <h2>{project.title}</h2>
@@ -171,16 +203,6 @@ const ProjectSection = () => {
             </motion.div>
           ))}
         </div>
-
-        {!isMobile && (
-          <button
-            onClick={handleNext}
-            className={`${styles.arrowButton} ${styles.rightArrow}`}
-            aria-label="Next projects"
-          >
-            <FaChevronRight />
-          </button>
-        )}
       </div>
 
       <AnimatePresence>
