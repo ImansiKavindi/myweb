@@ -223,6 +223,29 @@
 
 
 @media screen and (max-width: 768px) {
+
+  .mobileScroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .mobileScroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .projectCard {
+    flex: 0 0 85%;
+    scroll-snap-align: start;
+  }
+
+  .arrowButton {
+    display: none;
+  }
+
+
   .projectsSection {
     padding: 30px;
     margin-top: 100px;
@@ -268,6 +291,30 @@
 }
 
 @media screen and (max-width: 480px) {
+
+  
+  .mobileScroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .mobileScroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .projectCard {
+    flex: 0 0 85%;
+    scroll-snap-align: start;
+  }
+
+  .arrowButton {
+    display: none;
+  }
+}
+
   .projectsSection {
     padding: 20px;
     margin-top: 30px;
@@ -297,4 +344,3 @@
   .arrowButton {
     display: none;
   }
-}

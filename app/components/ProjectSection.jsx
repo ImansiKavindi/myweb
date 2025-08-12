@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "../components/Styles/project.module.css";
 import { FaGithub } from "react-icons/fa";
@@ -8,11 +8,13 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 const ProjectSection = () => {
   const [activeModal, setActiveModal] = useState(null);
   const [currentPage, setCurrentPage] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   const projectsPerPage = 6;
 
   const projects = [
-    {
+    
+      {
       title: "Bliss - Calming App",
       description: "A relaxation app focused on enhancing mental well-being through features like soothing sounds, guided meditations, and positive affirmations to help users reduce stress and improve focus.",
       technologies: ["Kotlin"],
@@ -94,11 +96,18 @@ const ProjectSection = () => {
 
 
 
+
   ];
-// Calculate total pages
+
   const totalPages = Math.ceil(projects.length / projectsPerPage);
 
-  // Get projects for the current page
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   const currentProjects = projects.slice(
     currentPage * projectsPerPage,
     (currentPage + 1) * projectsPerPage
@@ -112,15 +121,7 @@ const ProjectSection = () => {
     setCurrentPage((prev) => (prev === totalPages - 1 ? 0 : prev + 1));
   };
 
-
-
-
-
-
-
-
-
-
+  const displayedProjects = isMobile ? projects : currentProjects;
 
   return (
     <section id="projects" className={styles.projectsSection}>
@@ -129,60 +130,59 @@ const ProjectSection = () => {
         <span className={styles.howdyText}>rojects</span>
       </h1>
 
-
-{/* Slider Container with relative position */}
       <div style={{ position: "relative", width: "100%" }}>
-        {/* Left Arrow */}
-        <button
-          onClick={handlePrev}
-          className={`${styles.arrowButton} ${styles.leftArrow}`}
-          aria-label="Previous projects"
-        >
-          <FaChevronLeft />
-        </button>
+        {!isMobile && (
+          <button
+            onClick={handlePrev}
+            className={`${styles.arrowButton} ${styles.leftArrow}`}
+            aria-label="Previous projects"
+          >
+            <FaChevronLeft />
+          </button>
+        )}
 
-        <div className={styles.projectContainer}>
-          {currentProjects.map((project, index) => (
+        <div
+          className={`${styles.projectContainer} ${
+            isMobile ? styles.mobileScroll : ""
+          }`}
+        >
+          {displayedProjects.map((project, index) => (
             <motion.div
-              key={index + currentPage * projectsPerPage}
+              key={index + (isMobile ? 0 : currentPage * projectsPerPage)}
               className={`${styles.projectCard} glass-effect`}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.05 }}
-              onClick={() => setActiveModal(index + currentPage * projectsPerPage)}
+              onClick={() =>
+                setActiveModal(index + (isMobile ? 0 : currentPage * projectsPerPage))
+              }
             >
-
-
-
-
-
-      
-            <div className={styles.cardContent}>
-              <h2>{project.title}</h2>
-              <motion.img
-                src={project.image}
-                alt={`${project.title} thumbnail`}
-                className={styles.projectImage}
-                whileHover={{ scale: 1.1 }}
-              />
-              <div className={styles.overlay}>Click to View Details</div>
-            </div>
-          </motion.div>
-        ))}
+              <div className={styles.cardContent}>
+                <h2>{project.title}</h2>
+                <motion.img
+                  src={project.image}
+                  alt={`${project.title} thumbnail`}
+                  className={styles.projectImage}
+                  whileHover={{ scale: 1.1 }}
+                />
+                <div className={styles.overlay}>Click to View Details</div>
+              </div>
+            </motion.div>
+          ))}
         </div>
-        {/* Right Arrow */}
-        <button
-          onClick={handleNext }
-          className={`${styles.arrowButton} ${styles.rightArrow}`}
-          aria-label="Next projects"
-        >
-          <FaChevronRight />
-        </button>
-      </div>
-      
 
-      {/* Modal Section */}
+        {!isMobile && (
+          <button
+            onClick={handleNext}
+            className={`${styles.arrowButton} ${styles.rightArrow}`}
+            aria-label="Next projects"
+          >
+            <FaChevronRight />
+          </button>
+        )}
+      </div>
+
       <AnimatePresence>
         {activeModal !== null && (
           <motion.div
