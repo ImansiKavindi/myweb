@@ -88,9 +88,16 @@ const AboutSection = () => {
 
             <div>
               <p>
-                I’m Imansi, a 22-year-old from Galle, now living in Kadawatha. I’m a third-year IT undergraduate at SLIIT with a passion for web and mobile development, project coordination, and creating meaningful digital experiences. My journey—from volleyball courts to student leadership—has taught me teamwork, creativity, and growth. I’m now seeking an internship where I can apply my skills, learn from real-world challenges, and keep growing into the best version of myself.
+                I’m Imansi a 22-year-old girl from  Galle, now living in Kadawatha. My journey began not just in classrooms, but on volleyball courts, dance stages, and student leadership boards. School wasn’t just about books for me; it was about showing up, stepping up, and discovering who I was meant to be.
               </p>
-               
+              <p>
+                That same energy now drives me as a third-year undergraduate specializing in Information Technology at SLIIT. I’ve always been curious about how things work — not just machines, but systems, ideas, and people.  
+                I’ve found a passion in web and mobile development, project coordination, and building digital experiences that matter.I bring my full self eager to learn, contribute, and grow.
+              </p>
+              
+              <p>
+                Right now, I’m looking for an internship that feels like the next chapter where I can gain real-world experience, be part of something exciting, and keep becoming the best version of myself. And when I’m not deep into code or planning something new, I’m probably dreaming up ideas, learning something unexpected, or just appreciating the little things that make this journey worth it.
+              </p>
             </div>
 
             {/* Tabs */}
